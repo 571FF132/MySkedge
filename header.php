@@ -1,8 +1,7 @@
 <html>
-  <html>
-    <head>
-     MySkedge
-    </head>
-    <body>
+  <head>
+    <title>MySkedge</title>
+  </head>
+  <body>
 
 
