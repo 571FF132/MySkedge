@@ -14,7 +14,7 @@ class Dao {
     }
   }
 
-  public function Connect(){
+  public function connect(){
    $conn = $this->getConnection();
   }
  
