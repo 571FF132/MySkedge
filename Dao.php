@@ -8,7 +8,7 @@ class Dao {
   private function getConnection () {
     try {
       return
-        new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass)
+        new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass)
     } catch (Exception $e) {
       echo "Connection failed: " . $e->getMessage();
     }
