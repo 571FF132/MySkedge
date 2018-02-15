@@ -1,7 +1,8 @@
 <?php
 
 require_once("Dao.php");
-connect();
+$dao = new Dao();
+$dao->connect();
 require_once("header.php");
 require_once("body.php");
 require_once("footer.php");
