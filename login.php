@@ -1,7 +1,6 @@
 <?php
-/*o();
-$dao->connect();*/
 require_once("header.php");
+?>
 
 <div id="login">
 <h1>Login</h1>
@@ -42,7 +41,6 @@ require_once("header.php");
 </div>
 
 
-
+<?php
 require_once("footer.php");
-
 ?>
