@@ -1,4 +1,5 @@
 
-     <h2>This is a test</h2>
+     <div class="copyright">&copy; Copyright 2018 MySkedge.com/Justin Stiffler
+     </div>
   </body>
 </html>
