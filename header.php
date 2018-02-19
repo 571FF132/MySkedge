@@ -6,19 +6,14 @@
   <body>
     <div id="navigation">
     <ul class="navigation-bar">
-    /*  <div class="navigation-item" id="navigation-home"> */
-      <li>
+      <li class="navigation-item" id="navigation-home">
         <a href="index.php">
-          <img src="/images/MySkedgeLogo256x256.png" alt="MySkedge.com">
+          <img id="brand" src="/images/MySkedgeLogo256x256.png" alt="MySkedge.com">
         </a>
       </li>
-   /*   </div> */    
-   /*   <div class="navigation-item"> */
-      <li>
+      <li class="navigation-item">
         <a href="login.php">Login/Sign Up
         </a>   
       </li>
-   /*   </div> */
-    <ul>
     </div>
 

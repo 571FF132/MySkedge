@@ -18,8 +18,24 @@
 }
 
 .img {
-   width:100%;
+ /*  width:100%;  */
 }
+
+#brand {
+  position:absolute;
+}
+
+.about {
+  font-family: "Times New Roman", Times, serif;
+
+}
+.about-red {
+  font-family: "Times New Roman", Times, serif;
+  display:inline;
+  color: #F00;
+ 
+}
+
 
 .copyright {
   display:inline;
