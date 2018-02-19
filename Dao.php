@@ -8,14 +8,26 @@ class Dao {
   private function getConnection () {
     try {
       return
-        new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass)
+        new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass);
     } catch (Exception $e) {
       echo "Connection failed: " . $e->getMessage();
     }
   }
 
-  public function connect(){
-   $conn = $this->getConnection();
+  public function login(){
+    $conn = $this->getConnection();
+    $query = $conn->prepare("select * from Users where username = :username and password = :password");
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $query->execute();
+    return $query->fetchAll();
+  }
+
+  public function signup(){
+    $conn = $this->getConnection();
+    $query = $conn->prepare("INSERT INTO Users (name, password) VALUES (:name, :password)");
+    $query->bindParam(':name', $name);
+    $query->bindParam(':password', $password);
+    $query->execute();
   }
  
 }
