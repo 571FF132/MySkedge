@@ -10,7 +10,7 @@
   border-bottom: none;
   padding: 3 7;
   padding-bottom: 1px;
-  background-color: #F0F8FF;
+  background-color: #0080FF;
 }
 
 #navigation-home {
@@ -19,4 +19,10 @@
 
 .img {
    width:100%;
+}
+
+.copyright {
+  display:inline;
+  margin-left:50%;
+  margin-right:50%;
 }
