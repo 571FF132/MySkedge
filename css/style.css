@@ -1,0 +1,22 @@
+.navigation-bar {
+  list-style:none;
+  display:inline;
+}
+
+.navigation-item {
+  display:inline;
+  margin-left: 5px;
+  border: 1px black solid;
+  border-bottom: none;
+  padding: 3 7;
+  padding-bottom: 1px;
+  background-color: #F0F8FF;
+}
+
+#navigation-home {
+
+}
+
+.img {
+   width:100%;
+}
