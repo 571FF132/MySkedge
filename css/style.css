@@ -1,6 +1,8 @@
 .navigation-bar {
   list-style:none;
   display:inline;
+  height:5%;
+  width:100%;
 }
 
 .navigation-item {
