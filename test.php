@@ -7,7 +7,7 @@
 
 <header>
     <div class="container">
-      <h1 class="logo"></h1>
+      <h1 class="logo"><img src="/images/MySkedgeLogo256x256.png" alt="MySkedge.com"></h1>
 
       <nav>
         <ul>
