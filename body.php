@@ -1,4 +1,4 @@
-<div class="img" class="carousel">
+<div class="img carousel">
   <img class="main-carousel" src="/images/barbershop.jpg">
   <img class="main-carousel" src="/images/nailsalon.jpg">
   <img class="main-carousel" src="/images/calendar.png">
