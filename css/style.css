@@ -14,8 +14,11 @@ header::after {
 }
 
 .logo {
-  float: left;
-  padding: 10px 0;
+  /*  float: left; */
+  /* padding: 10px 0; */
+  height: auto;
+  width: auto;
+
 }
 
 nav {
