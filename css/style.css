@@ -100,7 +100,8 @@ nav a:hover::before {
 
 
 #brand {
-
+  width: 50px;
+  height: 50px;
 }
 .about {
   font-family: "Times New Roman", Times, serif;
