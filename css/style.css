@@ -39,7 +39,7 @@
 }
 .about {
   font-family: "Times New Roman", Times, serif;
-
+  display: inline;
 }
 .about-red {
   font-family: "Times New Roman", Times, serif;
