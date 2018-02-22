@@ -21,10 +21,10 @@
  /*  width:100%;  */
 }
 
-#brand {
-  position:absolute;
-}
 
+#brand {
+  display:inline;  
+}
 .about {
   font-family: "Times New Roman", Times, serif;
 
