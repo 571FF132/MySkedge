@@ -1,5 +1,5 @@
 .container {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -93,9 +93,6 @@ nav a:hover::before {
 
 #brand {
 
-  display:inline;  
-  width:100%;
-  height:auto;
 }
 .about {
   font-family: "Times New Roman", Times, serif;
