@@ -68,6 +68,11 @@ nav a:hover::before {
 }
 
 
+#navigation {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .navigation-bar {
   list-style:none;
   display:inline;
