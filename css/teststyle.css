@@ -1,0 +1,55 @@
+div.wrap2 {
+  float: left;
+  height: 500px;
+  width: 422px;
+}
+div.group input {
+  display: none;
+  left: -100%;
+  position: absolute;
+  top: -100%;
+}
+div.group input ~ div.content {
+  border: solid 1px black;
+  display: none;
+  height: 350px;
+  margin: 0px 60px;
+  position: relative;
+  width: 300px;
+}
+div.group input:checked ~ div.content {
+  display: block;
+}
+div.group input:checked ~ label.previous,
+div.group input:checked ~ label.next {
+  display: block;
+}
+div.group label {
+  background-color: #69c;
+  border: solid 1px black;
+  display: none;
+  height: 50px;
+  width: 50px;
+}
+img {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+}
+p {
+  text-align: center;
+}
+label {
+  font-size: 4em;
+  margin: 125px 0 0 0;
+}
+label.previous {
+  float: left;
+  padding: 0 0 30px 5px;
+}
+label.next {
+  float: right;
+  padding: 0 5px 25px 0;
+  text-align: right;
+}
