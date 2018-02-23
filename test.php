@@ -38,7 +38,7 @@
 <div class="wrap">
   <div class="wrap2">
     <div class="group">
-      <input type="radio" name="test" id="0" value="0">
+      <input type="radio" name="test" id="0" value="0" checked="">
       <label for="4" class="previous">&lt;</label>
       <label for="1" class="next">&gt;</label>
       <div class="content">
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="group">
-      <input type="radio" name="test" id="3" value="3" checked="">
+      <input type="radio" name="test" id="3" value="3">
       <label for="2" class="previous">&lt;</label>
       <label for="4" class="next">&gt;</label>
       <div class="content">
