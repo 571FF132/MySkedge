@@ -18,7 +18,7 @@
 	} else {
 		echo <a href="logou.php">Logout</a>
 	}
-        </a>   
+        ?>
       </li>
     </div>
 
