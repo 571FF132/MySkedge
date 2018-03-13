@@ -12,7 +12,12 @@
         </a>
       </li>
       <li class="navigation-item">
-        <a href="login.php">Login/Sign Up
+        <?php 
+	if (isset($_SESSION["access_granted"] && $_SESSION["access_granted] || !isset($_SESSION["access_granted"])) {
+		echo <a href="login.php">Login/Sign Up</a>
+	} else {
+		echo <a href="logou.php">Logout</a>
+	}
         </a>   
       </li>
     </div>
