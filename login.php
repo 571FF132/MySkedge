@@ -21,23 +21,8 @@ require_once("header.php");
 </form>
 </div>
 
-<div id="Sign Up">
-<h1>Sign Up</h1>
-<form action="Signup-handler.php" class="login-form"  method ="POST">
-  <div class ="form area">
-    Username:
-    <input placeholder="username here" name="username" class="username-login-input" type="text">
-  </div>
-
-  <div class ="form area">
-    Password:
-    <input name="password" class="password-login-input" type="password">
-  </div>
-
-  <div class ="form area">
-    <input type="submit" value="Sign Up">
-  </div>
-</form>
+<div id="Sign Up Link">
+  <a href="signup.php">SignUp</a> 
 </div>
 
 
