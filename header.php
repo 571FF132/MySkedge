@@ -13,10 +13,10 @@
       </li>
       <li class="navigation-item">
         <?php 
-	if (isset($_SESSION["access_granted"] && $_SESSION["access_granted] || !isset($_SESSION["access_granted"])) {
+	if (isset($_SESSION["access_granted"] && $_SESSION["access_granted"] || !isset($_SESSION["access_granted"])) {
 		echo "<a href="login.php">Login/Sign Up</a>"
 	} else {
-		echo "<a href="logou.php">Logout</a>"
+		echo "<a href="logout.php">Logout</a>"
 	}
         ?>
       </li>
