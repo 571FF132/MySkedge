@@ -24,5 +24,6 @@
 
 		<a href="login.php">LogIN</a>
       </li>
+    </ul>
     </div>
 
