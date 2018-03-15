@@ -6,7 +6,7 @@ session_start();
 if ("123" == $_POST["username"] &&
     "123" == $_POST["password"]) {
   $_SESSION["access_granted"] = true;
-  header("Location:granted.php");
+  header("Location:dashboard.php");
 
 } else {
   $status = "Invalid username or password";
