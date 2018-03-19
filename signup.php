@@ -4,7 +4,7 @@ require_once("header.php");
 
 <div id="Sign Up">
 <h1>Sign Up</h1>
-<form action="Signup-handler.php" class="login-form"  method ="POST">
+<form action="signup-handler.php" class="login-form"  method ="POST">
   <div class ="form area">
     Username:
     <input placeholder="username here" name="username" class="username-login-input" type="text">
