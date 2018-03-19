@@ -3,7 +3,8 @@ session_start();
 
 require_once("Dao.php");
 $dao = new Dao();
-$appointments = $dao->getCXAppointments(_SESSION["RID"]);
+$rid = _SESSION['RID'];
+$appointments = $dao->getCXAppointments(rid);
 require_once("header.php");
 ?>
 
@@ -15,7 +16,9 @@ require_once("header.php");
 <ul>
   <?php foreach ($appointments as $appointment) {
     echo "<li><a href='appointment/details.php?id=" . $appointment["id"] . "'>" .$appointment["name"] . "</a></li>";
-  } ?>
+  }
+  echo "<li>_SESSION['RID']</li>";
+  ?>
 </ul>
 
 
