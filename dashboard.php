@@ -17,7 +17,7 @@ require_once("header.php");
   <?php foreach ($appointments as $appointment) {
     echo "<li><a href='appointment/details.php?id=" . $appointment["id"] . "'>" .$appointment["name"] . "</a></li>";
   }
-  echo "<li>_SESSION['RID']</li>";
+  echo "<li>" . $rid . "</li>";
   ?>
 </ul>
 
