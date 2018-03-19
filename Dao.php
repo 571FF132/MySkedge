@@ -33,7 +33,40 @@ class Dao {
     $query->bindParam(':password', $password);
     $query->execute();
   }
- 
+
+  public function getUser($rcdID){
+    $conn = $this->getConnection();
+    $saveQ = "select * from user where username = :username and password = :password";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':username', $username);
+    $query->bindParam(':password', $password);
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $query->execute();
+    return $query->fetchAll();
+  }
+
+  public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    $conn = $this->getConnection();
+    $saveQ = "INSERT INTO appointment (business_id, employee_id, customer_id, timestamp_start, timestamp_end, created)
+                               VALUES (:BXID, :EMPID, CXID, TSSTART, TSEND, CURRENT_TIMESTAMP)";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':BXID', $BXID);
+    $query->bindParam(':EMPID', $EMPID);
+    $query->bindParam(':CXID', $CXID);
+    $query->bindParam(':TSSTART', $TSSTART);
+    $query->bindParam(':TSEND', $TSEND);
+    $query->execute();
+
+  }
+  public function getCXAppointments($CXID){
+    $conn = $this->getConnection();
+    $saveQ = "select * from appointment where  customer_id = :customer_id";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':customer_id', $CXID);
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $query->execute();
+    return $query->fetchAll();
+  }
 }
 
 ?>
