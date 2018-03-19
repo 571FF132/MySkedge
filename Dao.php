@@ -27,9 +27,9 @@ class Dao {
 
   public function signup($username, $password);
     $conn = $this->getConnection();
-    $saveQ = "INSERT INTO Users (name, password) VALUES (:name, :password)";
+    $saveQ = "INSERT INTO Users (username, password) VALUES (:username, :password)";
     $query = $conn->prepare();
-    $query->bindParam(':name', $name);
+    $query->bindParam(':username', $username);
     $query->bindParam(':password', $password);
     $query->execute();
   }
