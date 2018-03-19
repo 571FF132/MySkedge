@@ -16,7 +16,7 @@ class Dao {
 
   public function login($username, $password){
     $conn = $this->getConnection();
-    $saveQ = "select * from Users where username = :username and password = :password";
+    $saveQ = "select * from user where username = :username and password = :password";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':username', $username);
     $query->bindParam(':password', $password);
@@ -27,7 +27,7 @@ class Dao {
 
   public function signup($username, $password){
     $conn = $this->getConnection();
-    $saveQ = "INSERT INTO Users (username, password) VALUES (:username, :password)";
+    $saveQ = "INSERT INTO user (email, password) VALUES (:username, :password)";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':username', $username);
     $query->bindParam(':password', $password);

@@ -27,8 +27,13 @@
   	}else{
 		$_SESSION['sentiment'] = "good";
   		$_SESSION['messages'] = array("Welcome.");
-		$dao->signup($name, $password);
-		header("Location: dashboard.php");
-		exit;
+		try{
+			$dao->signup($name, $password);
+			header("Location: dashboard.php");
+			exit;
+		} catch (Exception $e) {
+			var_dump($e);
+      			die;
+		}
 	}
 ?>
