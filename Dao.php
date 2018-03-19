@@ -14,9 +14,12 @@ class Dao {
     }
   }
 
-  public function login(){
+  public function login($username, $password){
     $conn = $this->getConnection();
-    $query = $conn->prepare("select * from Users where username = :username and password = :password");
+    $saveQ = "select * from Users where username = :username and password = :password";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':username', $username);
+    $query->bindParam(':password', $password);
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
     return $query->fetchAll();
@@ -24,7 +27,8 @@ class Dao {
 
   public function signup(){
     $conn = $this->getConnection();
-    $query = $conn->prepare("INSERT INTO Users (name, password) VALUES (:name, :password)");
+    $saveQ = "INSERT INTO Users (name, password) VALUES (:name, :password)";
+    $query = $conn->prepare();
     $query->bindParam(':name', $name);
     $query->bindParam(':password', $password);
     $query->execute();
