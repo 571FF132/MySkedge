@@ -25,7 +25,7 @@ class Dao {
     return $query->fetchAll();
   }
 
-  public function signup($username, $password);
+  public function signup($username, $password){
     $conn = $this->getConnection();
     $saveQ = "INSERT INTO Users (username, password) VALUES (:username, :password)";
     $query = $conn->prepare($saveQ);
