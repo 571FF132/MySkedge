@@ -1,7 +1,9 @@
-<div class="img carousel">
+<div id="carousel">
+  <span id="img-carousel">
   <img class="main-carousel" src="/images/barbershop.jpg">
   <img class="main-carousel" src="/images/nailsalon.jpg">
   <img class="main-carousel" src="/images/calendar.png">
+  </span>
 </div>  
 
 <div class="about">
