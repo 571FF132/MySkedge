@@ -26,10 +26,10 @@
   float: right;
 }
 
-.carousel {
+.carousel-wrapper {
   width: 100%;
   height: auto;
-
+  
 }
 
 .img {
