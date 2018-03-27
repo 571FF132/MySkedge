@@ -14,18 +14,16 @@
 }
 
 .navigation-item {
-  display:inline;
-  float: right;
-  /*  margin-left: 5px; */
-  /*  border: 2px white solid; */
-  border-bottom: none;
-  padding: 5 5 5 5;
-  /*padding-bottom: 1px;*/
+  display: inline;
   background-color: #0080FF;
 }
 
 #navigation-home {
   float: left;
+}
+
+#navigation-links{
+  float: right;
 }
 
 .img {
