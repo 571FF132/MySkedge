@@ -4,10 +4,9 @@ session_start();
 require_once("Dao.php");
 
 
-
-if (!isset($_POST[])){
+/*if (!isset($_POST[])){
   $_SESSION["] = $status;
-}
+}*/
 
 
 if (isset($_POST["loginButton"])){
