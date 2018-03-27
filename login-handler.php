@@ -28,9 +28,9 @@ if (isset($_POST["loginButton"])){
 }
 
 
-
+/*
 // For simplification Lets pretend I got these login credentials from an SQL table.
-/*if ("123" == $_POST["username"] &&
+if ("123" == $_POST["username"] &&
     "123" == $_POST["password"]) {
   $_SESSION["access_granted"] = true;
   header("Location:dashboard.php");
