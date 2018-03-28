@@ -27,7 +27,7 @@ require_once("header.php");
   </div>
 
   <div class ="form area">
-    <input type="submit" value="Sign In">
+    <input name="loginButton" type="submit" value="Sign In">
   </div>
 </form>
 </div>

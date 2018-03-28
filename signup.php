@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("header.php");
 ?>
 
@@ -16,7 +18,7 @@ require_once("header.php");
   </div>
 
   <div class ="form area">
-    <input type="submit" value="Sign Up">
+    <input name="signupButton" type="submit" value="Sign Up">
   </div>
 </form>
 </div>
