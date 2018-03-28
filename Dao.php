@@ -22,7 +22,7 @@ class Dao {
     $query->bindParam(':password', $password);
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    return $query->fetchAll();
+    return $query->fetch();
   }
 
   public function signup($username, $password){
@@ -42,7 +42,7 @@ class Dao {
     $query->bindParam(':password', $password);
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    return $query->fetchAll();
+    return $query->fetch();
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){

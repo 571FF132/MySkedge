@@ -9,6 +9,7 @@ require_once("Dao.php");
 }*/
 
 $messages = array();
+$User = array();
 if (isset($_POST["loginButton"])){
   $username = $_POST["username"];
   $password = $_POST["password"];
@@ -27,6 +28,8 @@ if (isset($_POST["loginButton"])){
       $_SESSION["access_granted"] = false;
       $_SESSION['sentiment'] = "bad";
       $messages[] = "UserID did equal null?" . $User["rcdID"];
+      print_r($User);
+      print("\n");
       $_SESSION['messages'] = $messages;
       header("Location: login.php");
       exit;
