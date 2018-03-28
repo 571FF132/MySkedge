@@ -6,8 +6,7 @@ class Dao {
   private $pass = "dd41374f";
 
   private function getConnection () {
-    try {
-      return
+
         new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass);
     } catch (Exception $e) {
       echo "Connection failed: " . $e->getMessage();
@@ -42,7 +41,7 @@ class Dao {
     $query->bindParam(':password', $password);
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    return $query->fetch();
+    return $query->fetchAll();
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
