@@ -17,7 +17,7 @@ if (isset($_POST["loginButton"])){
   try {
     $dao = new Dao();
     $User = $dao->login($username, $password);
-    if ($User["rcdID"] != null){ 
+    if ($User[rcdID] != null){ 
       $_SESSION["access_granted"] = true;
       $_SESSION["RID"] = $User["rcdID"];
       $_SESSION['sentiment'] = "good";
@@ -27,7 +27,7 @@ if (isset($_POST["loginButton"])){
     }else{
       $_SESSION["access_granted"] = false;
       $_SESSION['sentiment'] = "bad";
-      $messages[] = "UserID did equal null?" . implode("|",$User) . $User["rcdID"]. $User;
+      $messages[] = "UserID did equal null?{$User}" . implode("|",$User) . $User["rcdID"]. $User;
       print_r($User);
       print("\n");
       $_SESSION['messages'] = $messages;
