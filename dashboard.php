@@ -3,8 +3,8 @@ session_start();
 
 require_once("Dao.php");
 $dao = new Dao();
-$rid = _SESSION['RID'];
-$appointments = $dao->getCXAppointments(rid);
+$rid = _SESSION["RID"];
+$appointments = $dao->getCXAppointments($rid);
 require_once("header.php");
 ?>
 

@@ -8,7 +8,7 @@ require_once("Dao.php");
   $_SESSION["] = $status;
 }*/
 
-
+$messages = array();
 if (isset($_POST["loginButton"])){
   $username = $_POST["username"];
   $password = $_POST["password"];
@@ -18,7 +18,18 @@ if (isset($_POST["loginButton"])){
     $User = $dao->login($username, $password);
     if ($User["ID"] != null){ 
       $_SESSION["access_granted"] = true;
-      header("Location:dashboard.php");
+      $_SESSION["RID"] = $User["ID"];
+      $_SESSION['sentiment'] = "good";
+
+      header("Location: dashboard.php");
+      exit;
+    }else{
+      $_SESSION["access_granted"] = false;
+      $_SESSION['sentiment'] = "bad";
+      $messages[] = "UserID did equal null?";
+      $_SESSION['messages'] = $messages;
+      header("Location: login.php");
+      exit;
     }
      
   } catch (Exception $e){
