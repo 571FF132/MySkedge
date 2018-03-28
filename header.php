@@ -18,10 +18,11 @@
       		<li class="navigation-item">
 			<?php
 			if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
-  			echo "<a href="login.php">L0G0UT</a>";
+  			echo "<a href='login.php'>L0G0UT</a>";
 			}else{		
-			echo "<a href="login.php">L0G1N</a>";
+			echo "<a href='login.php'>L0G1N</a>";
 			}
+			?>
       		</li>
     	</ul>
     	</span> 
