@@ -27,7 +27,7 @@ if (isset($_POST["loginButton"])){
     }else{
       $_SESSION["access_granted"] = false;
       $_SESSION['sentiment'] = "bad";
-      $messages[] = "UserID did equal null?" . implode("|",$User) . $User["rcdID"];
+      $messages[] = "UserID did equal null?" . implode("|",$User) . $User["rcdID"]. $User;
       print_r($User);
       print("\n");
       $_SESSION['messages'] = $messages;
