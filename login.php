@@ -13,6 +13,15 @@ if (isset($_SESSION["email_preset"])) {
 require_once("header.php");
 ?>
 
+<?php
+     if (isset($_SESSION['messages'])) {
+       $sentiment = $_SESSION['sentiment'];
+       foreach($_SESSION['messages'] as $message) {
+         echo "<div class='message $sentiment'>$message</div>";
+       }
+     }
+     ?>
+
 <div id="login">
 <h1>Login</h1>
 <form action="login-handler.php" class="login-form"  method ="POST">
