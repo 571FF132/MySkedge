@@ -26,7 +26,7 @@ if (isset($_POST["loginButton"])){
     }else{
       $_SESSION["access_granted"] = false;
       $_SESSION['sentiment'] = "bad";
-      $messages[] = "UserID did equal null?";
+      $messages[] = "UserID did equal null?" . $User["rcdID"];
       $_SESSION['messages'] = $messages;
       header("Location: login.php");
       exit;
