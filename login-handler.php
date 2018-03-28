@@ -16,9 +16,9 @@ if (isset($_POST["loginButton"])){
   try {
     $dao = new Dao();
     $User = $dao->login($username, $password);
-    if ($User["ID"] != null){ 
+    if ($User["rcdID"] != null){ 
       $_SESSION["access_granted"] = true;
-      $_SESSION["RID"] = $User["ID"];
+      $_SESSION["RID"] = $User["rcdID"];
       $_SESSION['sentiment'] = "good";
 
       header("Location: dashboard.php");
