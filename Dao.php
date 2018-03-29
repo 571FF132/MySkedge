@@ -36,13 +36,14 @@ class Dao {
       $this->log->LogDebug("Passwords match");
       $_SESSION['RID'] = $data['rcdID'];
       $_SESSION['sentiment'] = 'good';
-      $_SESSION['access-granted'] = true;
+      $_SESSION['access_granted'] = true;
       header("Location:dashboard.php");
       exit();
     }
-      $_SESSION['access-granted'] = false;
+      $_SESSION['access_granted'] = false;
       $_SESSION['messages'] = 'Username or Password not valid';
-      header("Location:login.php");
+      $_SESSION['input']['username'] = $username;
+       header("Location:login.php");
       exit();
 
 
