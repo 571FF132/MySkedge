@@ -25,15 +25,27 @@ class Dao {
   }
 
   public function login($username, $password){
-    $this->klog->LogDebug("Attempt login");
     $conn = $this->getConnection();
-    $saveQ = "select * from user where username = :username and password = :password";
+    $this->klog->LogDebug("Attempt login");
+    $saveQ = "select * from user where username = :username";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':username', $username);
-    $query->bindParam(':password', $password);
-    $query->setFetchMode(PDO::FETCH_ASSOC);
-    $query->execute();
-    return $query->fetch();
+    $data = $query->execute();
+    $hash = $data['password'];
+    if (password_verify($password, $hash)) {
+      $this->log->LogDebug("Passwords match");
+      $_SESSION['RID'] = $data['rcdID'];
+      $_SESSION['sentiment'] = 'good';
+      $_SESSION['access-granted'] = true;
+      header("Location:dashboard.php");
+      exit();
+    }
+      $_SESSION['access-granted'] = false;
+      $_SESSION['messages'] = 'Username or Password not valid';
+      header("Location:login.php");
+      exit();
+
+
   }
 
   public function signup($username, $password){
