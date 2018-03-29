@@ -1,20 +1,31 @@
 <?php
+require_once("KLogger.php");
+
 class Dao {
   private $host = "us-cdbr-iron-east-05.cleardb.net";
   private $db = "heroku_b9b1f4a7bec7469";
   private $user = "b187b7773eec73";
   private $pass = "dd41374f";
+  private $klog;
 
-  private function getConnection () {
+  public function __construct() {
+    $this->klog = new Klogger("/klog/MySkedge.log", Klogger::DEBUG);
+  }
+
+  public function getConnection () {
+    $this->klog->LogDebug("Attempt getConnection");
     try {
      return
         new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass);
     } catch (Exception $e) {
       echo "Connection failed: " . $e->getMessage();
+      $this->klog->LogFatal($e);
     }
+    $this->klog->LogDebug("Got connection to MySQL");
   }
 
   public function login($username, $password){
+    $this->klog->LogDebug("Attempt login");
     $conn = $this->getConnection();
     $saveQ = "select * from user where username = :username and password = :password";
     $query = $conn->prepare($saveQ);
