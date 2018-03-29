@@ -13,11 +13,11 @@
        			<img id="brand" src="/images/MySkedgeLogo256x256.png" alt="MySkedge.com">
   		</a>
     	</span>
-    	<span class ="navigation-item" id="navigation-links>
-    	<ul id=navigation-links-list">
+    	<span class ="navigation-item" id="navigation-links">
+    	<ul>
       		<li>
 			<?php
-			if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
+			if (isset($_SESSION['access_granted']) && $_SESSION['access_granted']) {
   			echo "<a href='logout.php'>L0G0UT</a>";
 			}else{		
 			echo "<a href='login.php'>L0G1N</a>";
