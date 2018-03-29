@@ -15,7 +15,7 @@
     	</span>
     	<span class ="navigation-item" id="navigation-links>
     	<ul id=navigation-links-list">
-      		<li class="navigation-item">
+      		<li>
 			<?php
 			if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
   			echo "<a href='logout.php'>L0G0UT</a>";
