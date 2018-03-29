@@ -24,12 +24,12 @@ class Dao {
     $this->klog->LogDebug("Got connection to MySQL");
   }
 
-  public function login($username, $password){
+  public function login($email, $password){
     $conn = $this->getConnection();
     $this->klog->LogDebug("Attempt login");
-    $saveQ = "select * from user where username = :username";
+    $saveQ = "select * from user where email = :email";
     $query = $conn->prepare($saveQ);
-    $query->bindParam(':username', $username);
+    $query->bindParam(':email', $email);
     $data = $query->execute();
     $hash = $data['password'];
     if (password_verify($password, $hash)) {
@@ -41,21 +41,23 @@ class Dao {
       exit();
     }
       $_SESSION['access_granted'] = false;
-      $_SESSION['messages'] = 'Username or Password not valid';
-      $_SESSION['input']['username'] = $username;
+      $_SESSION['messages'][0] = "Username or Password not valid";
+      $_SESSION['input']['email'] = $email;
        header("Location:login.php");
       exit();
 
 
   }
 
-  public function signup($username, $password){
+  public function signup($email, $password){
     $conn = $this->getConnection();
-    $saveQ = "INSERT INTO user (email, password) VALUES (:username, :password)";
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $saveQ = "INSERT INTO user (email, password) VALUES (:email, :password)";
     $query = $conn->prepare($saveQ);
-    $query->bindParam(':username', $username);
+    $query->bindParam(':email', $email);
     $query->bindParam(':password', $password);
     $query->execute();
+    $this->klog->LogDebug("Insert new user into database");
   }
 
   public function getUser($rcdID){
