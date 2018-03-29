@@ -19,7 +19,7 @@ require_once("header.php");
        $sentiment = $_SESSION['sentiment'];
        foreach($_SESSION['messages'] as $message) {
          echo "<div class='message $sentiment'>$message</div>";
-         unset($_SESSION['messages']);
+         unset($message);
        }
      }
      ?>
