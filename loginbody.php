@@ -3,7 +3,7 @@
 <form action="login-handler.php" class="login-form"  method ="POST">
   <div class ="form-area">
     Username:
-    <input placeholder="username here" name="username" class="username-login-input" type="text">
+    <input value=<?php echo $_SESSION['input']['username']?> name="username" class="username-login-input" type="text">
   </div>
 
   <div class ="form-area">
@@ -18,5 +18,5 @@
 </div>
 
 <div id="Sign Up Link">
-  <a href="signup.php">SignUp</a>
+  <h1>New User?</h1>  <a href="signup.php">SignUp</a>
 </div>

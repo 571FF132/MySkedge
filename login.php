@@ -1,14 +1,15 @@
 <?php
 session_start();
 
-if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
-  header("Location:dashboard.php");
+if (isset($_SESSION['access_granted']) && $_SESSION['access_granted']) {
+  header('Location:dashboard.php');
+  exit;
 }
 
-$email = "";
+/*$email = "";
 if (isset($_SESSION["email_preset"])) {    
   $email = $_SESSION["email_preset"];
-}
+}*/
 
 require_once("header.php");
 ?>
