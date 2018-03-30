@@ -30,7 +30,6 @@ class Dao {
     $saveQ = "select * from user where email = :email";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':email', $email);
-    $this->klog->LogDebug("query" . $query . "hope that worked?");
     $data = $query->execute();
     $hash = $data['password'];
     if (password_verify($password, $hash)) {
