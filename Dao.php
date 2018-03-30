@@ -40,7 +40,7 @@ class Dao {
       header("Location:dashboard.php");
       exit();
     }
-      $this->log->LogDebug("Passwords do not match");
+      $this->klog->LogDebug("Passwords do not match");
       $_SESSION['access_granted'] = false;
       $_SESSION['messages'][0] = "Email or Password not valid";
       $_SESSION['input']['email'] = $email;
