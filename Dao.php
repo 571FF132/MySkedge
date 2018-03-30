@@ -15,13 +15,13 @@ class Dao {
   public function getConnection () {
     $this->klog->LogDebug("Attempt getConnection");
     try {
-     return
-        new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass);
+     $connection = new PDO("mysql:dbname={$this->db};host={$this->host}", $this->user, $this->pass);
     } catch (Exception $e) {
-      echo "Connection failed: " . $e->getMessage();
       $this->klog->LogFatal($e);
+      exit;
     }
-    $this->klog->LogDebug("Got connection to MySQL");
+    $this->klog->LogDebug("getConnection Success"); 
+    return $connection;
   }
 
   public function login($email, $password){
@@ -30,6 +30,7 @@ class Dao {
     $saveQ = "select * from user where email = :email";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':email', $email);
+    $this->klog->LogDebug("query" . $query . "hope that worked?");
     $data = $query->execute();
     $hash = $data['password'];
     if (password_verify($password, $hash)) {
