@@ -2,8 +2,8 @@
 <h1>Login</h1>
 <form action="login-handler.php" class="login-form"  method ="POST">
   <div class ="form-area">
-    Username:
-    <input value=<?php echo '"' . $_SESSION['input']['username'] . '"'?> name="username" class="username-login-input" type="text">
+    E-mail::
+    <input value=<?php echo '"' . $_SESSION['input']['email'] . '"'?> name="email" class="email-login-input" type="text">
   </div>
 
   <div class ="form-area">
