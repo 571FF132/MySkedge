@@ -15,15 +15,14 @@
     	</span>
     	<span class ="navigation-item" id="navigation-links">
     	<ul>
-      		<li>
 			<?php
 			if (isset($_SESSION['access_granted']) && $_SESSION['access_granted']) {
-  			echo "<a href='logout.php'>L0G0UT</a>";
+			echo "<li><a href='dashboard.php'>MySkedge!</a></li>";
+  			echo "<li><a href='logout.php'>L0G0UT</a></li>";
 			}else{		
-			echo "<a href='login.php'>L0G1N</a>";
+			echo "<li><a href='login.php'>L0G1N</a></li>";
 			}
 			?>
-      		</li>
     	</ul>
     	</span> 
     	</div>

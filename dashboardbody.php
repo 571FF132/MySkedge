@@ -1,8 +1,8 @@
 <?php
 
-require_once("Dao.php");
+require_once('Dao.php');
 $dao = new Dao();
-$rid = _SESSION['RID'];
+$rid = $_SESSION['RID'];
 $appointments = $dao->getCXAppointments($rid);
 
 ?>
