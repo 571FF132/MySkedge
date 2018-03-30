@@ -8,8 +8,7 @@ if (isset($_POST["loginButton"])){
   $email = $_POST["username"];
   $password = $_POST["password"];
 
-    $access->login($email, $password);  
-  } 
+  $access->login($email, $password);  
 }
 
 ?>
