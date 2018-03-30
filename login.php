@@ -6,7 +6,7 @@ if (isset($_SESSION['access_granted']) && $_SESSION['access_granted']) {
   exit;
 }
 
-require_once("header.php");
+require_once('header.php');
 ?>
 
 <?php
@@ -20,9 +20,9 @@ require_once("header.php");
      ?>
 
 <?php
-require_once("loginbody.php"); 
+require_once('loginbody.php'); 
 ?>
 
 <?php
-require_once("footer.php");
+require_once('footer.php');
 ?>
