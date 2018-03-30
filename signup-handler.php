@@ -29,6 +29,7 @@
   		$_SESSION['messages'] = array("Welcome.");
 		try{
 			$dao->signup($email, $password);
+			$_SESSION['access_granted'] = true;
 			header("Location: dashboard.php");
 			exit;
 		} catch (Exception $e) {
