@@ -30,10 +30,11 @@ class Dao {
     $saveQ = "select * from user where email = :email";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':email', $email);
-    $data = $query->execute();
+    $query->execute();
+    $data = $query->fetch();
     $hash = $data['password'];
     if (password_verify($password, $hash)) {
-      $this->log->LogDebug("Passwords match");
+      $this->klog->LogDebug("Passwords match");
       $_SESSION['RID'] = $data['rcdID'];
       $_SESSION['sentiment'] = 'good';
       $_SESSION['access_granted'] = true;
