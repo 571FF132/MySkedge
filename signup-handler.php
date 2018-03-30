@@ -1,21 +1,21 @@
 <?php
 	session_start();
-	require_once("Dao.php");
+	require_once('Dao.php');
 	$dao = new Dao();
 
-	$name = $_POST["username"];
-	$password = $_POST["password"];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
 
 	$_SESSION['presets'] = array($_POST);
 	$valid = true;
   	$messages = array();
-  	if (empty($name)) {
-    		$messages[] = "PLEASE ENTER A NAME";
+  	if (empty($email)) {
+    		$messages[] = "Provide an email.";
     		$valid = false;
   	}
 
   	if (empty($password)) {
-    		$messages[] = "PLEASE ENTER A PASSWORD.";
+    		$messages[] = "Please enter a password.";
     		$valid = false;
   	}
 
@@ -28,7 +28,7 @@
 		$_SESSION['sentiment'] = "good";
   		$_SESSION['messages'] = array("Welcome.");
 		try{
-			$dao->signup($name, $password);
+			$dao->signup($email, $password);
 			header("Location: dashboard.php");
 			exit;
 		} catch (Exception $e) {

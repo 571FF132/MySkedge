@@ -9,7 +9,7 @@ require_once("header.php");
 <form action="signup-handler.php" class="login-form"  method ="POST">
   <div class ="form area">
     Username:
-    <input placeholder="username here" name="username" class="username-login-input" type="text">
+    <input placeholder="email here" name="email" class="email-login-input" type="text">
   </div>
 
   <div class ="form area">
