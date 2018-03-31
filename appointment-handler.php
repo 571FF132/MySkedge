@@ -16,19 +16,19 @@
         $valid = true;
         $messages = array();
         if ($BXID = 0) {
-                $messages[] = "Please select a Business.";
+                $messages[0] = "Please select a Business.";
                 $valid = false;
         }
 
         if ($CXID = 0) {
-                $messages[] = "Something went wrong. Please contact webmaster.";
+                $messages[1] = "Something went wrong. Please contact webmaster.";
                 $valid = false;
         }
 	if ($apptstart > $apptend) {
-		$messages[] = "You can not have an appointment end before it starts, dude.";
+		$messages[2] = "You can not have an appointment end before it starts, dude.";
 		$valid = false;
 	}elseif (($apptend - $apptstart) > 80000){
-		$messages[] = "What kind of appointment takes that long, dude?";
+		$messages[3] = "What kind of appointment takes that long, dude?";
                 $valid = false;
 	}
 	
