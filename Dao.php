@@ -76,7 +76,7 @@ class Dao {
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
     $conn = $this->getConnection();
     $saveQ = "INSERT INTO appointment (business_id, employee_id, customer_id, timestamp_start, timestamp_end, created)
-                               VALUES (:BXID, :EMPID, CXID, TSSTART, TSEND, CURRENT_TIMESTAMP)";
+                               VALUES (:BXID, :EMPID, :CXID, :TSSTART, :TSEND, CURRENT_TIMESTAMP)";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':BXID', $BXID);
     $query->bindParam(':EMPID', $EMPID);
