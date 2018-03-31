@@ -10,8 +10,8 @@
 	$apptstarttime = $_POST['appointment-start-time'];
 	$apptenddate = $_POST['appointment-end-date'];
         $apptendtime = $_POST['appointment-end-time'];
-        $apptstart = TIMESTAMP(apptstartdate,apptstarttime);
-	$apptend = TIMESTAMP(apptenddate, apptendtime);
+        $apptstart = DateTime::createFromFormat('Y-m-d H:i:s', $apptstartdate . $apptstarttime);
+	$apptend = DateTime::createFromFormat('Y-m-d H:i:s', $apptenddate . $apptendtime);
         $_SESSION['presets'] = array($_POST);
         $valid = true;
         $messages = array();
