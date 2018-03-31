@@ -5,6 +5,8 @@
 
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+        $firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
 
 	$_SESSION['presets'] = array($_POST);
 	$valid = true;
@@ -28,7 +30,7 @@
 		$_SESSION['sentiment'] = "good";
   		$_SESSION['messages'] = array("Welcome.");
 		try{
-			$dao->signup($email, $password);
+			$dao->signup($email, $password, $firstname, $lastname);
 			$_SESSION['access_granted'] = true;
 			header("Location: dashboard.php");
 			exit;

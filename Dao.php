@@ -51,13 +51,15 @@ class Dao {
 
   }
 
-  public function signup($email, $password){
+  public function signup($email, $password, $firstname, $lastname){
     $conn = $this->getConnection();
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $saveQ = "INSERT INTO user (email, password) VALUES (:email, :password)";
+    $saveQ = "INSERT INTO user (email, password, firstname, lastname) VALUES (:email, :password, :firstname, :lastname)";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':email', $email);
     $query->bindParam(':password', $password);
+    $query->bindParam(':firstname', $firstname);
+    $query->bindParam(':lastname', $lastname);
     $query->execute();
     $this->klog->LogDebug("Insert new user into database");
   }
