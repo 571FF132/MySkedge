@@ -16,6 +16,16 @@ $businesses = $dao->getBusinesses();
   ?>
 </ul>
 
+<?php
+     if (isset($_SESSION['messages'])) {
+       $sentiment = $_SESSION['sentiment'];
+       foreach($_SESSION['messages'] as $message) {
+         echo "<div class='message $sentiment'>$message</div>";
+         unset($message);
+       }
+     }
+?>
+
 <div class="appointment-form-wrapper">
         <form action="appointment-handler.php" class="login-form" method="POST">
                 <div class="form-area">
