@@ -47,8 +47,6 @@ class Dao {
       $_SESSION['input']['email'] = $email;
        header("Location:login.php");
       exit();
-
-
   }
 
   public function signup($email, $password, $firstname, $lastname){
@@ -93,10 +91,14 @@ class Dao {
     $saveQ = "select * from appointment where  customer_id = :customer_id";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':customer_id', $CXID);
-    $query->setFetchMode(PDO::FETCH_ASSOC);
     $query->execute();
-    return $query->fetchAll();
+    return $data = $query->fetchAll();
   }
+ 
+  public function getEmployees($BXID){
+
+  }
+
 }
 
 ?>

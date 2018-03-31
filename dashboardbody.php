@@ -21,7 +21,7 @@ $appointments = $dao->getCXAppointments($rid);
         <form action="appointment-handler.php" class="login-form" method="POST">
                 <div class="form-area">
                         Business:
-                        <select>
+                        <select id="business-select">
                                 <option value="business1">business1</option>
                                 <option value="business2">barber2</option>
                                 <option value="business3">nailsalon3</option>
