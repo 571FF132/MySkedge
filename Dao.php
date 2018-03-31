@@ -95,8 +95,21 @@ class Dao {
     return $data = $query->fetchAll();
   }
  
-  public function getEmployees($BXID){
+  public function getBusinesses(){
+    $conn = $this->getConnection();
+    $saveQ = "select * from business";
+    $query = $conn->prepare($saveQ);
+    $query->execute();
+    return $data = $query->fetchAll();
+  }
 
+  public function getEmployees($BXID){
+    $conn = $this->getConnection();
+    $saveQ = "select * from employee join user on rcdID = employee_id where busines_id = :business_id";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':business_id', $BXID);
+    $query->execute();
+    return $data = $query->fetchAll();
   }
 
 }

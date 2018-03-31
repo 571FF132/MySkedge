@@ -4,16 +4,15 @@ require_once('Dao.php');
 $dao = new Dao();
 $rid = $_SESSION['RID'];
 $appointments = $dao->getCXAppointments($rid);
-
+$businesses = $dao->getBusinesses();
 ?>
 
 <div><h1>MY SKEDGE</h1></div>
 
 <ul>
   <?php foreach ($appointments as $appointment) {
-    echo "<li><a href='appointment/details.php?id=" . $appointment["id"] . "'>" .$appointment["name"] . "</a></li>";
+    echo "<li>" . $appointment['business_id'] . $appointment['employee_id'] . "</li>";
   }
-  echo "<li>" . $rid . "</li>";
   ?>
 </ul>
 
@@ -22,16 +21,22 @@ $appointments = $dao->getCXAppointments($rid);
                 <div class="form-area">
                         Business:
                         <select id="business-select">
-                                <option value="business1">business1</option>
+                                <option value="0">Select a business</option>
                                 <option value="business2">barber2</option>
                                 <option value="business3">nailsalon3</option>
                                 <option value="business4">mechanic4</option>
+				<?php foreach ($businesses as $business) {
+    echo "<option value ='". $business['business_id'] . "'>" .$business['name'] . "</option>" ;
+  }
+  echo "<li>" . $rid . "</li>";
+  ?>
                         </select>
                 </div>
                 <div class="form-area">
                         Employee:
                         <select>
-                                <option value="any">No preference</option>
+                                <option value="0">No preference</option>
+  				<option value="41">jdog test</option>
                         </select>
                 </div>
                 <div class="form-area">
