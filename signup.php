@@ -7,7 +7,7 @@ require_once("header.php");
 <div id="Sign Up">
 <h1>Sign Up</h1>
 * = required.
-<form action="signup-handler.php" class="login-form"  method ="POST">
+<form action="signup-handler2.php" class="login-form"  method ="POST">
   <div class ="form-area">
     Email:
     <input value=<?php echo '"' . $_SESSION['input']['email'] . '"'?> placeholder="email here" name="email" class="login-input" type="text"> *

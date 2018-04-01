@@ -49,6 +49,38 @@ class Dao {
       exit();
   }
 
+  public function verifySignup($email, $password, $firstname, $lastname){
+    $conn = $this->getConnection();
+    $saveQ = "select * from user where email = :email";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':email', $email);
+    $query->execute();
+    $returned = $query->fetch();
+    unset($_SESSION['messages']);
+    unset($_SESSION['verification_fail']);
+    unset($_SESSION['sentiment']);	
+    if($returned) {
+      $_SESSION['messages'][0] = "An account already exists with that email.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $_SESSION['messages'][1] = "Invalid email.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;	
+    }		
+    if (!isset($email) || trim($email) == '') {
+      $_SESSION['messages'][2] = "Email is required.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;
+    }
+    if (!isset($password) || trim($password) == '') {
+      $_SESSION['messages'][3] = "Password is required.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;
+    }
+  }
+
   public function signup($email, $password, $firstname, $lastname){
     $conn = $this->getConnection();
     $password = password_hash($password, PASSWORD_DEFAULT);
