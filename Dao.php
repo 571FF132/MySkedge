@@ -94,22 +94,45 @@ class Dao {
     $this->klog->LogDebug("Insert new user into database");
     $_SESSION['access_granted'] = true;
     $_SESSION['messages'][0] = "Welcome " . trim($email)  . "!";
-    $_SESSION['sentiment'] = "good";
-    	
+    $_SESSION['sentiment'] = "good";	
   }
 
-  public function getUser($rcdID){
+  public function getUser($email){
     $conn = $this->getConnection();
-    $saveQ = "select * from user where username = :username and password = :password";
+    $saveQ = "select * from user where email = :email";
     $query = $conn->prepare($saveQ);
-    $query->bindParam(':username', $username);
-    $query->bindParam(':password', $password);
-    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $query->bindParam(':email', $email);
     $query->execute();
-    return $query->fetchAll();
+    return $data = $query->fetch();
+  }
+
+  public function verifyAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    unset($_SESSION['messages']);
+    unset($_SESSION['verification_fail']);
+    unset($_SESSION['sentiment']);
+    if($BXID = 0){
+      $_SESSION['messages'][0] = "Please select a business.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;
+    }
+
+    if ($TSSTART > $TSEND) {
+      $_SESSION['messages'][1] = "Appointment cannot end before it starts.";
+      $_SESSION['sentiment'] = "bad";
+      $_SESSION['verification_fail'] = true;
+    }
+      
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    if($EMPID = 0){ /*No preference for employee*/
+      $conn = $this->getConnection();
+      $saveQ = "select * from employee where business_id = :BXID";
+      $query = $conn->prepare($saveQ);
+      $query->bindParam(':BXID', $BXID);
+      $query->execute();
+      $emp = $query->fetch();
+    }
     $conn = $this->getConnection();
     $saveQ = "INSERT INTO appointment (business_id, employee_id, customer_id, timestamp_start, timestamp_end, created)
                                VALUES (:BXID, :EMPID, :CXID, :TSSTART, :TSEND, CURRENT_TIMESTAMP)";
