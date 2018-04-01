@@ -15,12 +15,12 @@ if (isset($_POST['appointment-submit-button'])) {
 	$apptstart = DateTime::createFromFormat('Y-m-d H:i:s', $apptstartdate . $apptstarttime);
         $apptend = DateTime::createFromFormat('Y-m-d H:i:s', $apptenddate . $apptendtime);
 	
-	$appointmet->verifyAppointment($BXID, $EMPID, $CXID, apptstart, apptend);
-	if (isset($_SESSION['verification_fail']){
+	$appointmet->verifyAppointment($BXID, $EMPID, $CXID, $apptstart, $apptend);
+	if (isset($_SESSION['verification_fail'])){
 		header("Location:dashboard.php");
                 exit;
         }else{
-   		appointment->addAppointment($BXID, $EMPID, $CXID, apptstart, apptend);
+   		$appointment->addAppointment($BXID, $EMPID, $CXID, $apptstart, $apptend);
 		header("Location:dashboard.php");
                 exit;
         }
