@@ -4,7 +4,7 @@ session_start();
 require_once("Dao.php");
 $appointment = new Dao();
 
-if (isset($_POST['signupButton'])) {
+if (isset($_POST['appointment-submit-button'])) {
 	$CXID = $_SESSION['RID'];
         $BXID = $_POST['business-select'];
         $EMPID = $_POST['employee-select'];
