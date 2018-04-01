@@ -37,6 +37,7 @@ class Dao {
       $this->klog->LogDebug("Passwords match");
       $_SESSION['RID'] = $data['rcdID'];
       $_SESSION['sentiment'] = 'good';
+      $_SESSION['messages'][0] = "Welcome " . trim($email)  . "!";
       $_SESSION['access_granted'] = true;
       header("Location:dashboard.php");
       exit();
@@ -107,7 +108,7 @@ class Dao {
   }
 
   public function verifyAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
-$this->klog->LogDebug("Attempt verify appt");
+    $this->klog->LogDebug("Attempt verify appt");
     unset($_SESSION['messages']);
     unset($_SESSION['verification_fail']);
     unset($_SESSION['sentiment']);

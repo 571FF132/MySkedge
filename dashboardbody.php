@@ -27,7 +27,7 @@ $businesses = $dao->getBusinesses();
 ?>
 
 <div class="appointment-form-wrapper">
-        <form action="appointment-handler2.php" class="login-form" method="POST">
+        <form action="appointment-handler2.php" class="appointment-form" method="POST">
                 <div class="form-area">
                         Business:
                         <select id="business-select">
