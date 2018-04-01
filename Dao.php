@@ -131,14 +131,17 @@ class Dao {
       $query = $conn->prepare($saveQ);
       $query->bindParam(':BXID', $BXID);
       $query->execute();
-      $emp = $query->fetch();
+      $data = $query->fetch();
+      $emp = $data(employee_id);
+    }else{
+     $emp = $EMPID;
     }
     $conn = $this->getConnection();
     $saveQ = "INSERT INTO appointment (business_id, employee_id, customer_id, timestamp_start, timestamp_end, created)
                                VALUES (:BXID, :EMPID, :CXID, :TSSTART, :TSEND, CURRENT_TIMESTAMP)";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':BXID', $BXID);
-    $query->bindParam(':EMPID', $EMPID);
+    $query->bindParam(':EMPID', $emp);
     $query->bindParam(':CXID', $CXID);
     $query->bindParam(':TSSTART', $TSSTART);
     $query->bindParam(':TSEND', $TSEND);

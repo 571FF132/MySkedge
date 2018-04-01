@@ -20,7 +20,7 @@ $businesses = $dao->getBusinesses();
      if (isset($_SESSION['messages'])) {
        $sentiment = $_SESSION['sentiment'];
        foreach($_SESSION['messages'] as $message) {
-         echo "<div class='message $sentiment'>" . $message . "</div>";
+         echo "<div class='message $sentiment'>$message</div>";
          unset($message);
        }
      }
