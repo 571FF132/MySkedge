@@ -107,6 +107,7 @@ class Dao {
   }
 
   public function verifyAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+$this->klog->LogDebug("Attempt verify appt");
     unset($_SESSION['messages']);
     unset($_SESSION['verification_fail']);
     unset($_SESSION['sentiment']);
@@ -125,7 +126,8 @@ class Dao {
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
-    if($EMPID = 0){ /*No preference for employee*/
+    $this->klog->LogDebug("Attempt add apt`");
+      if($EMPID = 0){ /*No preference for employee*/
       $conn = $this->getConnection();
       $saveQ = "select * from employee where business_id = :BXID";
       $query = $conn->prepare($saveQ);
