@@ -4,6 +4,16 @@ session_start();
 require_once("header.php");
 ?>
 
+<?php
+     if (isset($_SESSION['messages'])) {
+       $sentiment = $_SESSION['sentiment'];
+       foreach($_SESSION['messages'] as $message) {
+         echo "<div class='message $sentiment'>$message</div>";
+         unset($message);
+       }
+     }
+?>
+
 <div id="Sign Up">
 <h1>Sign Up</h1>
 * = required.
