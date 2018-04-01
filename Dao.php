@@ -92,6 +92,10 @@ class Dao {
     $query->bindParam(':lastname', $lastname);
     $query->execute();
     $this->klog->LogDebug("Insert new user into database");
+    $_SESSION['access_granted'] = true;
+    $_SESSION['messages'][0] = "Welcome " . trim($email)  . "!";
+    $_SESSION['sentiment'] = "good";
+    	
   }
 
   public function getUser($rcdID){
