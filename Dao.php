@@ -9,7 +9,7 @@ class Dao {
   private $klog;
 
   public function __construct() {
-    $this->klog = new Klogger("/klog/MySkedge.log", Klogger::DEBUG);
+    $this->klog = new Klogger('/klog/', Klogger::DEBUG);
   }
 
   public function getConnection () {
