@@ -15,8 +15,8 @@ if (isset($_POST['appointment-submit-button'])) {
 	/*$apptstart = DateTime::createFromFormat('Y-m-d H:i:s', $apptstartdate . $apptstarttime);
         $apptend = DateTime::createFromFormat('Y-m-d H:i:s', $apptenddate . $apptendtime);
 	*/
-	$apptstart = date('Y-m-d G:i:s', strtotime($_POST['appointment-start-date'].' '.$_POST['appointment-start-time'));
-        $apptend = date('Y-m-d G:i:s', strtotime($_POST['appointment-end-date'].' '.$_POST['appointment-end-time'));
+	$apptstart = date('Y-m-d G:i:s', strtotime($_POST['appointment-start-date'].' '.$_POST['appointment-start-time']));
+        $apptend = date('Y-m-d G:i:s', strtotime($_POST['appointment-end-date'].' '.$_POST['appointment-end-time']));
 
 	$appointment->verifyAppointment($BXID, $EMPID, $CXID, $apptstart, $apptend);
 	if (isset($_SESSION['verification_fail'])){
