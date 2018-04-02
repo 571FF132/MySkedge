@@ -186,24 +186,18 @@ class Dao {
     return $data = $query->fetchAll();
   }
 
-  public function deleteCXappointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+  public function deleteCXappointment($BXID){
     unset($_SESSION['messages']);
     unset($_SESSION['sentiment']);
     $conn = $this->getConnection();
     $saveQ = "DELETE FROM appointment 
-	WHERE business_id = :BXID and employee_id = :EMPID and customer_id = :CXID
-		and timestamp_start = :TSSTART and timestamp_end = :TSEND";
+	WHERE apptID = :BXID";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':BXID', $BXID);
-    $query->bindParam(':EMPID', $emp);
-    $query->bindParam(':CXID', $CXID);
-    $query->bindParam(':TSSTART', $TSSTART);
-    $query->bindParam(':TSEND', $TSEND);
     $query->execute();
     $_SESSION['error-messages'] = $query->errorInfo();
     if ($_SESSION['error-messages'][0] == "00000"){
     $_SESSION['messages'][0] = "Appointment Deleted.";
-    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . "Appointment Deleted.";
     $_SESSION['sentiment'] = "good";	
     } else {
     $_SESSION['messages'][0] = "Appointment not Deleted. Something went wrong.";

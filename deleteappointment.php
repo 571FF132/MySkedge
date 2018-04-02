@@ -12,14 +12,7 @@ if (isset($_SESSION['access_granted']) && !$_SESSION['access_granted']
 }else{
 	$dao = new Dao();
 	$bid = $_GET['bid'];
-	$eid = $_GET['eid'];
-	$cid = $_GET['cid'];
-	/*$ts = $_GET['ts'];
-	$te = $_GET['te'];
-        */
-	$ts = date('Y-m-d G:i:s', strtotime($_GET['ts']));
-	$te = date('Y-m-d G:i:s', strtotime($_GET['te']));
-	$dao->deleteCXappointment($bid, $eid, $cid, $ts, $te);
+	$dao->deleteCXappointment($bid);
 	header("Location:dashboard.php");
       	exit;
 }

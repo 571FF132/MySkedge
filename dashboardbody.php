@@ -38,7 +38,7 @@ $businesses = $dao->getBusinesses();
      if (isset($_SESSION['error-messages'])) {
        $sentiment = $_SESSION['sentiment'];
        foreach($_SESSION['error-messages'] as $errormessage) {
-         echo "<div class='errormessage $sentiment'>$errormessage</div>";
+       /*  echo "<div class='errormessage $sentiment'>$errormessage</div>"; */
          unset($errormessage);
        }
      }
