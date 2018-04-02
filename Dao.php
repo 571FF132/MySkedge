@@ -112,7 +112,7 @@ class Dao {
     unset($_SESSION['messages']);
     unset($_SESSION['verification_fail']);
     unset($_SESSION['sentiment']);
-    if($BXID == 0){
+    if($BXID == "0"){
       $_SESSION['messages'][0] = "Please select a business.";
       $_SESSION['sentiment'] = "bad";
       $_SESSION['verification_fail'] = true;
