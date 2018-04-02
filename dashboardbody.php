@@ -40,21 +40,21 @@ $businesses = $dao->getBusinesses();
         <form action="appointment-handler2.php" class="appointment-form" method="POST">
                 <div class="form-area">
                         Business:
-                        <select id="business-select">
+                        <select name="business-select">
                                 <option value="0">Select a business</option>
                                 <option value="business2">barber2</option>
                                 <option value="business3">nailsalon3</option>
                                 <option value="business4">mechanic4</option>
-				<?php foreach ($businesses as $business) {
-    echo "<option value =". $business['rcdID'] . ">" .$business['name'] . "</option>" ;
-  }
-  echo "<li>" . $rid . "</li>";
-  ?>
+				<?php 
+				foreach ($businesses as $business) {
+					echo "<option value =". $business['rcdID'] . ">" .$business['name'] . "</option>" ;
+  				}
+  				?>
                         </select>
                 </div>
                 <div class="form-area">
                         Employee:
-                        <select id="employee-select">
+                        <select name="employee-select">
                                 <option value="0">No preference</option>
   				<option value="1">jdog test</option>
                         </select>
