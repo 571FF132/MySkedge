@@ -6,7 +6,7 @@ if (isset($_SESSION['access_granted']) && !$_SESSION['access_granted']
      || !isset($_SESSION['access_granted'])) {
 
       $_SESSION['sentiment'] = "bad";
-      $_SESSION['messages'][0] = "Don't do that, bro. Login first.";
+      $_SESSION['messages'][0] = "Don't do that, bro. That's messed up. Login first.";
       header("Location:login.php");
       exit;
 }else{
@@ -14,7 +14,9 @@ if (isset($_SESSION['access_granted']) && !$_SESSION['access_granted']
 	$bid = $_GET['bid'];
 	$eid = $_GET['eid'];
 	$cid = $_GET['cid'];
-	$dao->deleteCXappointment($bid, $eid, $cid);
+	$ts = $_GET['ts'];
+	$te = $_GET['te'];
+	$dao->deleteCXappointment($bid, $eid, $cid, $ts, $te);
 	header("Location:dashboard.php");
       	exit;
 }

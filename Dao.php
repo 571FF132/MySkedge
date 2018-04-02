@@ -162,7 +162,7 @@ class Dao {
     $saveQ = "select appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
  from appointment
  join business on business_id = business.rcdID
- join user on appointment.employee_id = user.rcdID Where customer_id = :customer_id";
+ join user on appointment.employee_id = user.rcdID Where customer_id = :customer_id Order By timestamp_start";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':customer_id', $CXID);
     $query->execute();
@@ -179,14 +179,25 @@ class Dao {
 
   public function getEmployees($BXID){
     $conn = $this->getConnection();
-    $saveQ = "select appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
- from appointment
- join business on business_id = business.rcdID
- join user on appointment.employee_id = user.rcdID";
+    $saveQ = "select * from employee where business_id = :business_id";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':business_id', $BXID);
     $query->execute();
     return $data = $query->fetchAll();
+  }
+
+  public function deleteCXappointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    $conn = $this->getConnection();
+    $saveQ = "DELETE FROM appointment 
+	WHERE business_id = :BXID and employee_id = :EMPID and customer_id = :CXID
+		and timestamp_start = :TSSTART and timestamp_end = :TSEND";
+    $query = $conn->prepare($saveQ);
+    $query->bindParam(':BXID', $BXID);
+    $query->bindParam(':EMPID', $emp);
+    $query->bindParam(':CXID', $CXID);
+    $query->bindParam(':TSSTART', $TSSTART);
+    $query->bindParam(':TSEND', $TSEND);
+    $query->execute(); 	
   }
 
 }
