@@ -9,12 +9,20 @@ $businesses = $dao->getBusinesses();
 
 <div><h1>MY SKEDGE</h1></div>
 
-<ul>
+<table>
+  <tr><th>Appointment Start</th><th>Appointment End</th><th>Business</th><th>Business Email</th><th>Employee</th><th>Employee Email</th><th>Delete</th></tr>
   <?php foreach ($appointments as $appointment) {
-    echo "<li>" . $appointment['business_id'] . $appointment['employee_id'] . "</li>";
+    echo "<tr><td>" . $appointment['timestamp_start'] ."</td>" .
+         "<td>" . $appointment['timestamp_end'] . "</td>" .
+         "<td>" . $appointment['name'] ."</td>" .
+	 "<td>" . $appointment['owner_email'] ."</td>" .
+	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
+	 "<td>" . $appointment['email'] ."</td>" .
+	 "<td><a href='deleteappointment.php?bid=" .$appointment['business_id'] . "&eid=" .$appointment['employee_id'] . "&cid=" . $rid . "'>X</a></td>" .
+         "</tr>";
   }
   ?>
-</ul>
+</table>
 
 <?php
      if (isset($_SESSION['messages'])) {

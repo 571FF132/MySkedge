@@ -149,14 +149,20 @@ class Dao {
     $query->bindParam(':TSEND', $TSEND);
     $query->execute();
     $_SESSION['error-messages'] = $query->errorInfo();
+    if ($_SESSION['error-messages'] == 00000){
     $_SESSION['messages'][0] = "Appointment added.";
     $_SESSION['sentiment'] = "good";
-    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . " TSEND " . $TSEND . " ";
-    $_SESSION['messages'][2] = "BXID " . $BXID . " emp " . $emp . " CXID " . $CXID . " ";
+    } else {
+    $_SESSION['messages'][0] = "Appointment not added. Something went wrong.";
+    $_SESSION['sentiment'] = "bad";
+    }
   }
   public function getCXAppointments($CXID){
     $conn = $this->getConnection();
-    $saveQ = "select * from appointment where  customer_id = :customer_id";
+    $saveQ = "select appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
+ from appointment
+ join business on business_id = business.rcdID
+ join user on appointment.employee_id = user.rcdID Where customer_id = :customer_id";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':customer_id', $CXID);
     $query->execute();
@@ -173,7 +179,10 @@ class Dao {
 
   public function getEmployees($BXID){
     $conn = $this->getConnection();
-    $saveQ = "select * from employee join user on rcdID = employee_id where busines_id = :business_id";
+    $saveQ = "select appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
+ from appointment
+ join business on business_id = business.rcdID
+ join user on appointment.employee_id = user.rcdID";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':business_id', $BXID);
     $query->execute();
