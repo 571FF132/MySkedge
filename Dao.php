@@ -148,6 +148,7 @@ class Dao {
     $query->bindParam(':TSSTART', $TSSTART);
     $query->bindParam(':TSEND', $TSEND);
     $query->execute();
+    $_SESSION['error-messages'] = $query->errorInfo();
     $_SESSION['messages'][0] = "Appointment added.";
     $_SESSION['sentiment'] = "good";
     $_SESSION['messages'][1] = "TSSTART " . $TSSTART . "TSEND " . $TSEND . " ";  
