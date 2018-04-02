@@ -44,9 +44,9 @@ $businesses = $dao->getBusinesses();
                 </div>
                 <div class="form-area">
                         Employee:
-                        <select>
+                        <select id="employee-select">
                                 <option value="0">No preference</option>
-  				<option value="41">jdog test</option>
+  				<option value="1">jdog test</option>
                         </select>
                 </div>
                 <div class="form-area">
