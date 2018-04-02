@@ -35,7 +35,7 @@ require_once("header.php");
 
   <div class ="form-area">
     Last Name:
-    <input value=<?php echo '"' . $_SESSION['input']['lastname'] . '"'?> placeholder="Last name" name="last name" class="login-input" type="text">
+    <input value=<?php echo '"' . $_SESSION['input']['lastname'] . '"'?> placeholder="Last name" name="lastname" class="login-input" type="text">
   </div>
 
   <div class ="form-area">
