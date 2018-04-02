@@ -149,7 +149,7 @@ class Dao {
     $query->bindParam(':TSEND', $TSEND);
     $query->execute();
     $_SESSION['error-messages'] = $query->errorInfo();
-    if ($_SESSION['error-messages'] == 00000){
+    if ($_SESSION['error-messages'][0] == "00000"){
     $_SESSION['messages'][0] = "Appointment added.";
     $_SESSION['sentiment'] = "good";
     } else {
