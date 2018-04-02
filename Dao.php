@@ -127,14 +127,14 @@ class Dao {
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
     $this->klog->LogDebug("Attempt add apt`");
-      if($EMPID == 0){ /*No preference for employee*/
+      if($EMPID == "0"){ /*No preference for employee*/
       $conn = $this->getConnection();
       $saveQ = "select * from employee where business_id = :BXID";
       $query = $conn->prepare($saveQ);
       $query->bindParam(':BXID', $BXID);
       $query->execute();
       $data = $query->fetch();
-      $emp = $data(employee_id);
+      $emp = $data['employee_id'];
     }else{
      $emp = $EMPID;
     }
