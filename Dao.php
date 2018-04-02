@@ -149,7 +149,8 @@ class Dao {
     $query->bindParam(':TSSTART', $TSSTART);
     $query->bindParam(':TSEND', $TSEND);
     $query->execute();
-
+    $_SESSION['messages'][0] = "Appointment added.";
+    $_SESSION['sentiment'] = "good";
   }
   public function getCXAppointments($CXID){
     $conn = $this->getConnection();
