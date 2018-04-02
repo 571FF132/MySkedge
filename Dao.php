@@ -151,7 +151,8 @@ class Dao {
     $_SESSION['error-messages'] = $query->errorInfo();
     $_SESSION['messages'][0] = "Appointment added.";
     $_SESSION['sentiment'] = "good";
-    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . "TSEND " . $TSEND . " ";  
+    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . " TSEND " . $TSEND . " ";
+    $_SESSION['messages'][2] = "BXID " . $BXID . " emp " . $emp . " CXID " . $CXID . " ";
   }
   public function getCXAppointments($CXID){
     $conn = $this->getConnection();
