@@ -112,7 +112,7 @@ class Dao {
     unset($_SESSION['messages']);
     unset($_SESSION['verification_fail']);
     unset($_SESSION['sentiment']);
-    if($BXID = 0){
+    if($BXID == 0){
       $_SESSION['messages'][0] = "Please select a business.";
       $_SESSION['sentiment'] = "bad";
       $_SESSION['verification_fail'] = true;
@@ -122,13 +122,12 @@ class Dao {
       $_SESSION['messages'][1] = "Appointment cannot end before it starts.";
       $_SESSION['sentiment'] = "bad";
       $_SESSION['verification_fail'] = true;
-    }
-      
+    }      
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
     $this->klog->LogDebug("Attempt add apt`");
-      if($EMPID = 0){ /*No preference for employee*/
+      if($EMPID == 0){ /*No preference for employee*/
       $conn = $this->getConnection();
       $saveQ = "select * from employee where business_id = :BXID";
       $query = $conn->prepare($saveQ);
@@ -151,6 +150,7 @@ class Dao {
     $query->execute();
     $_SESSION['messages'][0] = "Appointment added.";
     $_SESSION['sentiment'] = "good";
+    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . "TSEND " . $TSEND . " ";  
   }
   public function getCXAppointments($CXID){
     $conn = $this->getConnection();
