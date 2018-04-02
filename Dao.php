@@ -187,6 +187,8 @@ class Dao {
   }
 
   public function deleteCXappointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    unset($_SESSION['messages']);
+    unset($_SESSION['sentiment']);
     $conn = $this->getConnection();
     $saveQ = "DELETE FROM appointment 
 	WHERE business_id = :BXID and employee_id = :EMPID and customer_id = :CXID
@@ -197,7 +199,15 @@ class Dao {
     $query->bindParam(':CXID', $CXID);
     $query->bindParam(':TSSTART', $TSSTART);
     $query->bindParam(':TSEND', $TSEND);
-    $query->execute(); 	
+    $query->execute();
+    $_SESSION['error-messages'] = $query->errorInfo();
+    if ($_SESSION['error-messages'][0] == "00000"){
+    $_SESSION['messages'][0] = "Appointment Deleted.";
+    $_SESSION['sentiment'] = "good";	
+    } else {
+    $_SESSION['messages'][0] = "Appointment not Deleted. Something went wrong.";
+    $_SESSION['sentiment'] = "bad";
+    } 	
   }
 
 }
