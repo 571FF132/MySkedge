@@ -203,6 +203,7 @@ class Dao {
     $_SESSION['error-messages'] = $query->errorInfo();
     if ($_SESSION['error-messages'][0] == "00000"){
     $_SESSION['messages'][0] = "Appointment Deleted.";
+    $_SESSION['messages'][1] = "TSSTART " . $TSSTART . "Appointment Deleted.";
     $_SESSION['sentiment'] = "good";	
     } else {
     $_SESSION['messages'][0] = "Appointment not Deleted. Something went wrong.";
