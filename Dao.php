@@ -159,7 +159,7 @@ class Dao {
   }
   public function getCXAppointments($CXID){
     $conn = $this->getConnection();
-    $saveQ = "select appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
+    $saveQ = "select appointment.apptID, appointment.business_id, appointment.employee_id, timestamp_start, timestamp_end, name, owner_email, firstname, lastname, user.email, user.phone, user.address, user.zipcode
  from appointment
  join business on business_id = business.rcdID
  join user on appointment.employee_id = user.rcdID Where customer_id = :customer_id Order By timestamp_start";

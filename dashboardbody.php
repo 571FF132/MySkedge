@@ -18,8 +18,7 @@ $businesses = $dao->getBusinesses();
 	 "<td>" . $appointment['owner_email'] ."</td>" .
 	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
 	 "<td>" . $appointment['email'] ."</td>" .
-	 "<td><a href='deleteappointment.php?bid=" .$appointment['business_id'] . "&eid=" .$appointment['employee_id'] . "&cid=" . $rid .
-		 "&ts=" .$appointment['timestamp_start'] . "&te=" .$appointment['timestamp_end'] . "'>X</a></td>" .
+	 "<td><a href='deleteappointment.php?bid=" .$appointment['apptID'] . "'</td>" .
          "</tr>";
   }
   ?>
@@ -51,9 +50,6 @@ $businesses = $dao->getBusinesses();
                         Business:
                         <select name="business-select">
                                 <option value="0">Select a business</option>
-                                <option value="business2">barber2</option>
-                                <option value="business3">nailsalon3</option>
-                                <option value="business4">mechanic4</option>
 				<?php 
 				foreach ($businesses as $business) {
 					echo "<option value =". $business['rcdID'] . ">" .$business['name'] . "</option>" ;
@@ -65,7 +61,7 @@ $businesses = $dao->getBusinesses();
                         Employee:
                         <select name="employee-select">
                                 <option value="0">No preference</option>
-  				<option value="1">jdog test</option>
+  				<option value="11">Justin</option>
                         </select>
                 </div>
                 <div class="form-area">
