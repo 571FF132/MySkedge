@@ -19,7 +19,7 @@ $businesses = $dao->getBusinesses();
 	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
 	 "<td>" . $appointment['email'] ."</td>" .
 	 "<td><a href='deleteappointment.php?bid=" .$appointment['business_id'] . "&eid=" .$appointment['employee_id'] . "&cid=" . $rid .
-		 "$ts=" .$appointment['timestamp_start'] . "&te=" .$appointment['timestamp_end'] . "'>X</a></td>" .
+		 "&ts=" .$appointment['timestamp_start'] . "&te=" .$appointment['timestamp_end'] . "'>X</a></td>" .
          "</tr>";
   }
   ?>
