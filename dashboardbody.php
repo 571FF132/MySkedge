@@ -46,7 +46,7 @@ $businesses = $dao->getBusinesses();
                                 <option value="business3">nailsalon3</option>
                                 <option value="business4">mechanic4</option>
 				<?php foreach ($businesses as $business) {
-    echo "<option value ='". $business['rcdID'] . "'>" .$business['name'] . "</option>" ;
+    echo "<option value =". $business['rcdID'] . ">" .$business['name'] . "</option>" ;
   }
   echo "<li>" . $rid . "</li>";
   ?>
