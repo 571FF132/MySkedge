@@ -35,6 +35,7 @@ class Dao {
     $hash = $data['password'];
     if (password_verify($password, $hash)) {
       $this->klog->LogDebug("Passwords match");
+      $_SESSION['email'] = $email;
       $_SESSION['RID'] = $data['rcdID'];
       $_SESSION['sentiment'] = 'good';
       $_SESSION['messages'][0] = "Welcome " . trim($email)  . "!";
@@ -60,6 +61,7 @@ class Dao {
     unset($_SESSION['messages']);
     unset($_SESSION['verification_fail']);
     unset($_SESSION['sentiment']);	
+    $_SESSION['input']['email'] = $email;
     if($returned) {
       $_SESSION['messages'][0] = "An account already exists with that email.";
       $_SESSION['sentiment'] = "bad";
@@ -95,7 +97,8 @@ class Dao {
     $this->klog->LogDebug("Insert new user into database");
     $_SESSION['access_granted'] = true;
     $_SESSION['messages'][0] = "Welcome " . trim($email)  . "!";
-    $_SESSION['sentiment'] = "good";	
+    $_SESSION['sentiment'] = "good";
+    $_SESSION['email'] = $email;	
   }
 
   public function getUser($email){
@@ -104,7 +107,9 @@ class Dao {
     $query = $conn->prepare($saveQ);
     $query->bindParam(':email', $email);
     $query->execute();
-    return $data = $query->fetch();
+    $data = $query->fetch();
+    $_SESSION['RID'] = $data['rcdID'];
+    return $data;
   }
 
   public function verifyAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){

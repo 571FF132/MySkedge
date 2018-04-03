@@ -2,6 +2,7 @@
 
 require_once('Dao.php');
 $dao = new Dao();
+$user = $dao->getUser($_SESSION['email']);
 $rid = $_SESSION['RID'];
 $appointments = $dao->getCXAppointments($rid);
 $businesses = $dao->getBusinesses();
