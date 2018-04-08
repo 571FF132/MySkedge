@@ -27,6 +27,7 @@ class Dao {
   public function login($email, $password){
     unset($_SESSION['messages']);
     unset($_SESSION['sentiment']);
+    unset($_SESSION['input']['email']);
     $conn = $this->getConnection();
     $this->klog->LogDebug("Attempt login");
     $saveQ = "select * from user where email = :email";
@@ -47,6 +48,7 @@ class Dao {
     }
       $this->klog->LogDebug("Passwords do not match");
       $_SESSION['access_granted'] = false;
+      $_SESSION['sentiment'] = 'bad';
       $_SESSION['messages'][0] = "Email or Password not valid";
       $_SESSION['input']['email'] = $email;
        header("Location:login.php");
@@ -89,6 +91,7 @@ class Dao {
   public function signup($email, $password, $firstname, $lastname){
     unset($_SESSION['messages']);
     unset($_SESSION['sentiment']);
+    unset($_SESSION['input']['email']);
     $conn = $this->getConnection();
     $password = password_hash($password, PASSWORD_DEFAULT);
     $saveQ = "INSERT INTO user (email, password, firstname, lastname) VALUES (:email, :password, :firstname, :lastname)";
