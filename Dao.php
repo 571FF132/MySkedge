@@ -25,6 +25,8 @@ class Dao {
   }
 
   public function login($email, $password){
+    unset($_SESSION['messages']);
+    unset($_SESSION['sentiment']);
     $conn = $this->getConnection();
     $this->klog->LogDebug("Attempt login");
     $saveQ = "select * from user where email = :email";
@@ -85,6 +87,8 @@ class Dao {
   }
 
   public function signup($email, $password, $firstname, $lastname){
+    unset($_SESSION['messages']);
+    unset($_SESSION['sentiment']);
     $conn = $this->getConnection();
     $password = password_hash($password, PASSWORD_DEFAULT);
     $saveQ = "INSERT INTO user (email, password, firstname, lastname) VALUES (:email, :password, :firstname, :lastname)";
@@ -131,6 +135,8 @@ class Dao {
   }
 
   public function addAppointment($BXID, $EMPID, $CXID, $TSSTART, $TSEND){
+    unset($_SESSION['messages']);
+    unset($_SESSION['sentiment']);
     $this->klog->LogDebug("Attempt add apt`");
       if($EMPID == "0"){ /*No preference for employee*/
       $conn = $this->getConnection();
