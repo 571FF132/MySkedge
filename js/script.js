@@ -3,7 +3,7 @@ $(function() {
     $('.jcarousel')
         .jcarousel({
             // Core configuration goes here
-	    wrap: 'both';
+           
         })
         .jcarouselAutoscroll({
             interval: 3000,
