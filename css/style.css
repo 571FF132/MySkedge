@@ -52,6 +52,25 @@
  
 }
 
+.message{
+
+  border-style: groove;
+
+}
+
+.good{
+ 
+  border-color: green;
+  border-width: medium;
+
+}
+
+.bad{
+ 
+  border-color: red;
+  border-width: thick;
+
+}
 
 .copyright {
   display:inline;
