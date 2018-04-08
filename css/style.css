@@ -35,8 +35,8 @@
 
 #navigation-links li {
   display: inline;
-  margin-right: 5%;
-  padding-right: 2%;
+  margin-right: 5px;
+  padding-right: 2px;
 }
 
 .carousel-wrapper {
