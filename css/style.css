@@ -35,14 +35,16 @@ ul {
 
 li {
   display: inline;
+  margin-right: 5%;
   padding-right: 2%;
 }
 
 .carousel-wrapper {
   max-width: 90%;
-  max-height: 600px;
+  height: 600px;
   padding: 0 20px 40px 20px;
-  margin: auto;
+  margin: 20px auto;
+  position: relative;
 }
 
 /*
