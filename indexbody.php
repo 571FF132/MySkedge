@@ -14,8 +14,6 @@
   </ul>
   <span class="about">
     <p> With MySkedge you can schedule and manage appointments with customers and clients from anywhere. Customers and clients will have an easy and convenient way to schedule appointments with you.</p>
-  </span>
-  <span class="carousel-login-button">
     <?php
     if (isset($_SESSION['access_granted']) && $_SESSION['access_granted']){
       echo "<a href='dashboard.php'>Get Started</a>";
@@ -23,6 +21,7 @@
       echo "<a href='login.php'>Sign up now! It is 100% NOT free!</a>";
     }
     ?>
+   
   </span>
   </div>
 </div>
