@@ -21,16 +21,18 @@
 #navigation-home {
   height: auto;
   width: 100%;
-  display: inline;
   float: left;
 }
 
 #navigation-links{
-  list-style:none;
   height: auto;
   width: 100%;
-  display: inline;
   float: right;
+}
+
+ul {
+ list-style:none;
+ list-style-type: none;
 }
 
 .carousel-wrapper {
