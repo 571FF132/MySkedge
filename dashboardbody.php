@@ -17,6 +17,7 @@ $businesses = $dao->getBusinesses();
          echo "<div class='message $sentiment'>$message</div>";
          unset($message);
        }
+       unset($_SESSION['messages']);
      }
 ?>
 

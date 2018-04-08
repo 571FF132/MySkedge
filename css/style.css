@@ -111,12 +111,7 @@ form {
  
 }
 
-input {
-  width: 50%;
-  height: 35px;
-}
-
-select {
+form .form-area {
   width: 50%;
   height: 35px;
 }
