@@ -15,15 +15,21 @@
 
 .navigation-item {
   display: inline;
-  list-style:none;
   background-color: #0080FF;
 }
 
 #navigation-home {
+  height: auto;
+  width: 100%;
+  display: inline;
   float: left;
 }
 
 #navigation-links{
+  list-style:none;
+  height: auto;
+  width: 100%;
+  display: inline;
   float: right;
 }
 
