@@ -49,7 +49,6 @@ Position must be relative!
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 100%;
 }
 
 /*
@@ -74,11 +73,6 @@ have a fixed width and height (but it's not required).
 .jcarousel li {
     /* Required only for block elements like <li>'s */
     float: left;
-    width: 100px;
-}
-
-.img {
-   width:100%; 
 }
 
 
@@ -88,7 +82,10 @@ have a fixed width and height (but it's not required).
 }
 .about {
   font-family: "Times New Roman", Times, serif;
-  display: inline;
+  position:absolute;
+  right: 100px;
+  bottom: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
 }
 .about-red {
   font-family: "Times New Roman", Times, serif;
