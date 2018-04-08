@@ -1,8 +1,17 @@
 <div class="carousel-wrapper">
-  <div id="img-carousel">
-  <img class="main-carousel" src="/images/barbershop.jpg">
-  <img class="main-carousel" src="/images/nailsalon.jpg">
-  <img class="main-carousel" src="/images/calendar.png">
+  <div class="jcarousel">
+  <ul>
+    <li>
+      <img class="main-carousel" src="/images/barbershop.jpg">
+    </li>
+    <li>
+      <img class="main-carousel" src="/images/nailsalon.jpg">
+    </li>
+    <li>
+      <img class="main-carousel" src="/images/calendar.png">
+    </li>
+
+  </ul>
   <span class="about">
     <p> With MySkedge you can schedule and manage appointments with customers and clients from anywhere. Customers and clients will have an easy and convenient way to schedule appointments with you.</p>
   </span>
