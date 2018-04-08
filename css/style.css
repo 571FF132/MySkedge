@@ -28,12 +28,12 @@
   float: right;
 }
 
-ul {
+#navigation-links ul {
  list-style:none;
  list-style-type: none;
 }
 
-li {
+#navigation-links li {
   display: inline;
   margin-right: 5%;
   padding-right: 2%;
@@ -80,6 +80,7 @@ have a fixed width and height (but it's not required).
 .jcarousel li {
     /* Required only for block elements like <li>'s */
     float: left;
+    max-height: 600px;
 }
 
 
