@@ -11,6 +11,7 @@ require_once("header.php");
          echo "<div class='message $sentiment'>$message</div>";
          unset($message);
        }
+       unset($_SESSION['messages']);
      }
 ?>
 
