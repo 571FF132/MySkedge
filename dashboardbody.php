@@ -10,21 +10,6 @@ $businesses = $dao->getBusinesses();
 
 <div><h1>MY SKEDGE</h1></div>
 
-<table>
-  <tr><th>Appointment Start</th><th>Appointment End</th><th>Business</th><th>Business Email</th><th>Employee</th><th>Employee Email</th><th>Delete</th></tr>
-  <?php foreach ($appointments as $appointment) {
-    echo "<tr><td>" . $appointment['timestamp_start'] ."</td>" .
-         "<td>" . $appointment['timestamp_end'] . "</td>" .
-         "<td>" . $appointment['name'] ."</td>" .
-	 "<td>" . $appointment['owner_email'] ."</td>" .
-	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
-	 "<td>" . $appointment['email'] ."</td>" .
-	 "<td><a href='deleteappointment.php?bid=" .$appointment['apptID'] . "'>DELETE</a></td>" .
-         "</tr>";
-  }
-  ?>
-</table>
-
 <?php
      if (isset($_SESSION['messages'])) {
        $sentiment = $_SESSION['sentiment'];
@@ -44,6 +29,22 @@ $businesses = $dao->getBusinesses();
        }
      }
 ?>
+
+
+<table>
+  <tr><th>Appointment Start</th><th>Appointment End</th><th>Business</th><th>Business Email</th><th>Employee</th><th>Employee Email</th><th>Delete</th></tr>
+  <?php foreach ($appointments as $appointment) {
+    echo "<tr><td>" . $appointment['timestamp_start'] ."</td>" .
+         "<td>" . $appointment['timestamp_end'] . "</td>" .
+         "<td>" . $appointment['name'] ."</td>" .
+	 "<td>" . $appointment['owner_email'] ."</td>" .
+	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
+	 "<td>" . $appointment['email'] ."</td>" .
+	 "<td><a href='deleteappointment.php?bid=" .$appointment['apptID'] . "'>DELETE</a></td>" .
+         "</tr>";
+  }
+  ?>
+</table>
 
 <div class="appointment-form-wrapper">
         <form action="appointment-handler2.php" class="appointment-form" method="POST">

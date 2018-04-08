@@ -89,10 +89,10 @@ have a fixed width and height (but it's not required).
   height: 62px;
 }
 .about {
-  background-color: #F00000;
+  background-color: #0080FF;
   font-family: "Times New Roman", Times, serif;
   position:absolute;
-  right: 100px;
+  right: 0;
   bottom: 0;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
   text-outline: white;
