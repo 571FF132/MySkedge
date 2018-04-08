@@ -15,6 +15,7 @@
 
 .navigation-item {
   display: inline;
+  list-style:none;
   background-color: #0080FF;
 }
 
@@ -55,6 +56,8 @@
 .message{
 
   border-style: groove;
+  padding: 5 5;
+  margin: 2 0;
   width: 50%;
 }
 
@@ -70,6 +73,15 @@
   border-color: red;
   border-width: thick;
 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10 10;
 }
 
 .copyright {
