@@ -35,10 +35,12 @@ ul {
 
 li {
   display: inline;
+  padding-right: 2%;
 }
 
 .carousel-wrapper {
   max-width: 90%;
+  max-height: 600px;
   height: auto;
   padding: 0 20px 40px 20px;
   margin: auto;
