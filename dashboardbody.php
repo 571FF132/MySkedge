@@ -8,8 +8,8 @@ $appointments = $dao->getCXAppointments($rid);
 $businesses = $dao->getBusinesses();
 ?>
 
-<div><h1>MY SKEDGE</h1></div>
-
+<div id="dashboard-heading"><h1>MY SKEDGE</h1></div>
+<?php echo print_r($user); ?>
 <?php
      if (isset($_SESSION['messages'])) {
        $sentiment = $_SESSION['sentiment'];
