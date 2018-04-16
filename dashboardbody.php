@@ -35,12 +35,12 @@ $businesses = $dao->getBusinesses();
 <table>
   <tr><th>Appointment Start</th><th>Appointment End</th><th>Business</th><th>Business Email</th><th>Employee</th><th>Employee Email</th><th>Delete</th></tr>
   <?php foreach ($appointments as $appointment) {
-    echo "<tr><td>" . $appointment['timestamp_start'] ."</td>" .
-         "<td>" . $appointment['timestamp_end'] . "</td>" .
-         "<td>" . $appointment['name'] ."</td>" .
-	 "<td>" . $appointment['owner_email'] ."</td>" .
-	 "<td>" . $appointment['firstname'] . " " .$appointment['lastname'] . "</td>" .
-	 "<td>" . $appointment['email'] ."</td>" .
+    echo "<tr><td>" . htmlspecialchars($appointment['timestamp_start']) ."</td>" .
+         "<td>" . htmlspecialchars($appointment['timestamp_end']) . "</td>" .
+         "<td>" . htmlspecialchars($appointment['name']) ."</td>" .
+	 "<td>" . htmlspecialchars($appointment['owner_email']) ."</td>" .
+	 "<td>" . htmlspecialchars($appointment['firstname']) . " " . htmlspecialchars($appointment['lastname']) . "</td>" .
+	 "<td>" . htmlspecialchars($appointment['email']) ."</td>" .
 	 "<td><a href='deleteappointment.php?bid=" .$appointment['apptID'] . "'>DELETE</a></td>" .
          "</tr>";
   }
@@ -63,7 +63,8 @@ $businesses = $dao->getBusinesses();
                 <div class="form-area">
                         Employee:
                         <select name="employee-select" id="employee-select">
-                                <option value="0">No preference</option>
+                               <!-- <option value="0">No preference</option> -->
+                               <option value="0">Select a business first</option>
                         </select>
                 </div>
                 <div class="form-area">
