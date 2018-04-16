@@ -2,10 +2,11 @@ h1 h2 {
   font-family: 'Sarina', cursive;
 }
 
-#dashboard-heading {
+#dashboard-heading h1, h2 {
 	text-align:center;
 	position: relative;
   	display:inline;
+        font-family: 'Sarina', cursive;
 }
 
 
