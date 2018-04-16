@@ -1,6 +1,15 @@
-h1 {
+h1 h2 {
   font-family: 'Sarina', cursive;
 }
+
+#dashboard-heading {
+	text-align:center;
+	position: relative;
+  	display:inline;
+}
+
+
+
 #navigation {
   width: 100%;
   height: 62px;
