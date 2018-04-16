@@ -10,7 +10,7 @@ if(isset($_POST['b_id'])) {
         echo "<option value =0>No preference</option>" ;
         foreach($employees as $employee) {
          
-     		echo "<option value =". $employee['rcdID'] . ">" .$employee['firstname'] . " " . $employee['lastname'] . "</option>" ;
+     		echo "<option value =". $employee['employee_id'] . ">" .$employee['firstname'] . " " . $employee['lastname'] . "</option>" ;
 	}
 
 }
