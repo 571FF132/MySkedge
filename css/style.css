@@ -94,6 +94,7 @@ have a fixed width and height (but it's not required).
   background-color: #0080FF;
   font-family: 'Martel', serif;
   position:absolute;
+  width: 100%;
   right: 0;
   bottom: 0;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
@@ -153,7 +154,5 @@ table, th, td {
 .copyright {
   font-family: 'Shrikhand', cursive;
   display:inline;
-  margin-left:50%;
-  margin-right:50%;
-
+  text-align: center;
 }
