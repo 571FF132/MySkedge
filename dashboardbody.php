@@ -9,7 +9,7 @@ $businesses = $dao->getBusinesses();
 ?>
 
 <div id="dashboard-heading"><h1>MY SKEDGE</h1></div>
-<?php echo print_r($user); ?>
+<?php echo "<div id='dashboard-heading'><h2>for " . $user[2] . " " . $user[3] . " " . $user[1] . "</h1></div>" ?>
 <?php
      if (isset($_SESSION['messages'])) {
        $sentiment = $_SESSION['sentiment'];
