@@ -34,6 +34,7 @@
 }
 
 #navigation-links li {
+  font-family: 'Sarina', cursive;
   display: inline;
   margin-right: 5px;
   padding-right: 2px;
@@ -91,7 +92,7 @@ have a fixed width and height (but it's not required).
 }
 .about {
   background-color: #0080FF;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Martel', serif;
   position:absolute;
   right: 0;
   bottom: 0;
@@ -99,7 +100,7 @@ have a fixed width and height (but it's not required).
   text-outline: white;
 }
 .about-red {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Martel', serif;
   display:inline;
   color: #F00;
  
@@ -109,7 +110,7 @@ form {
  width:100%;
  margin:auto:
  position:relative;
- 
+  font-family: 'Nova Mono', monospace; 
 }
 
 form .form-area {
@@ -119,7 +120,7 @@ form .form-area {
 
 
 .message{
-
+  
   border-style: groove;
   padding: 5 5;
   margin: 2 0;
@@ -127,14 +128,14 @@ form .form-area {
 }
 
 .good{
- 
+  font-family: 'Shrikhand', cursive;
   border-color: green;
   border-width: medium;
 
 }
 
 .bad{
- 
+  font-family: 'Nova Mono', monospace;
   border-color: red;
   border-width: thick;
 
@@ -150,7 +151,9 @@ table, th, td {
 }
 
 .copyright {
+  font-family: 'Shrikhand', cursive;
   display:inline;
   margin-left:50%;
   margin-right:50%;
+
 }

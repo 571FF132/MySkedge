@@ -1,6 +1,7 @@
 <html>
 <head>
     	<title>MySkedge</title>
+	<link href="https://fonts.googleapis.com/css?family=Martel|Nova+Mono|Sarina|Shrikhand" rel="stylesheet">
     	<link rel="stylesheet" href="/css/style.css">
 	<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
