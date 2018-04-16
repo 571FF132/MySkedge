@@ -37,6 +37,7 @@ h1 {
 
 #navigation-links li {
   font-family: 'Sarina', cursive;
+  font-size: 2.2em;
   display: inline;
   margin-right: 5px;
   padding-right: 2px;
@@ -104,6 +105,7 @@ have a fixed width and height (but it's not required).
 }
 .about-red {
   font-family: 'Martel', serif;
+  font-size: 2em;
   display:inline;
   color: #F00;
  
@@ -155,6 +157,7 @@ table, th, td {
 
 .copyright {
   font-family: 'Shrikhand', cursive;
+  font-size: 1.25 em;
   position: relative;
   display:inline;
 }
