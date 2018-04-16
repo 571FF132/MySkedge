@@ -94,7 +94,7 @@ have a fixed width and height (but it's not required).
 }
 .about {
   background-color: #0080FF;
-  font-family: 'Martel', serif;
+  font-family: 'Shrikhand', cursive;
   position:absolute;
   width: 100%;
   right: 0;
@@ -113,7 +113,7 @@ form {
  width:100%;
  margin:auto:
  position:relative;
-  font-family: 'Nova Mono', monospace; 
+ font-family: 'Shrikhand', cursive;
 }
 
 form .form-area {
@@ -160,11 +160,9 @@ table, th, td {
 }
 
 .copyright p {
-  position: absolute;
   text-align: center;
   width: 100%;
   bottom:0;
-
 }
 
 
