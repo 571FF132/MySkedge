@@ -20,22 +20,22 @@ require_once("header.php");
 * = required.
 <form action="signup-handler2.php" class="login-form"  method ="POST">
   <div class ="form-area">
-    Email:
+    <label for="email">Email:</label>
     <input value=<?php echo '"' . $_SESSION['input']['email'] . '"'?> placeholder="email here" name="email" class="login-input" type="text"> *
   </div>
   
   <div class ="form-area">
-    Password:
+    <label for="Password">Password:</label>
     <input name="password" class="login-input" type="password"> *
   </div>
 
   <div class ="form-area">
-    First Name:
+    <label for="firstname">First Name:</label>
     <input value=<?php echo '"' . $_SESSION['input']['firstname'] . '"'?> placeholder="First name" name="firstname" class="login-input" type="text">
   </div>
 
   <div class ="form-area">
-    Last Name:
+    <label for"lastname">Last Name:</label>
     <input value=<?php echo '"' . $_SESSION['input']['lastname'] . '"'?> placeholder="Last name" name="lastname" class="login-input" type="text">
   </div>
 

@@ -50,7 +50,7 @@ $businesses = $dao->getBusinesses();
 <div class="appointment-form-wrapper">
         <form action="appointment-handler2.php" class="appointment-form" method="POST">
                 <div class="form-area">
-                        Business:
+                        <label for="business-select">Business:</label>
                         <select name="business-select" id="business-select">
                                 <option value="0">Select a business</option>
 				<?php 
@@ -61,19 +61,19 @@ $businesses = $dao->getBusinesses();
                         </select>
                 </div>
                 <div class="form-area">
-                        Employee:
+                        <label for="employee-select">Employee:</label>
                         <select name="employee-select" id="employee-select">
                                <!-- <option value="0">No preference</option> -->
                                <option value="0">Select a business first</option>
                         </select>
                 </div>
                 <div class="form-area">
-                        Appointment Start:
+                        <label for="appointment-start-date">Appointment Start:</label>
                         <input name="appointment-start-date" type="date">
                         <input name="appointment-start-time" type="time">
                 </div>
                 <div class="form-area">
-                        Appointment End:
+                        <label for="appointment-end-date">Appointment End:</label>
                         <input name="appointment-end-date" type="date">
                         <input name="appointment-end-time" type="time">
                 </div>
