@@ -1,4 +1,6 @@
-
+h1 {
+  font-family: 'Sarina', cursive;
+}
 #navigation {
   width: 100%;
   height: 62px;
@@ -153,6 +155,16 @@ table, th, td {
 
 .copyright {
   font-family: 'Shrikhand', cursive;
+  position: relative;
   display:inline;
-  text-align: center;
 }
+
+.copyright p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom:0;
+
+}
+
+
