@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
         <script type="text/javascript" src="/js/script.js"></script>  
+	<script type="text/javascript" src="/js/ajax.js"></script>
 </head>
 <body>
     	<div id="navigation">

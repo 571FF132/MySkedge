@@ -64,7 +64,6 @@ $businesses = $dao->getBusinesses();
                         Employee:
                         <select name="employee-select">
                                 <option value="0">No preference</option>
-  				<option value="11">Justin</option>
                         </select>
                 </div>
                 <div class="form-area">

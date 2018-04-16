@@ -193,7 +193,7 @@ class Dao {
 
   public function getEmployees($BXID){
     $conn = $this->getConnection();
-    $saveQ = "select * from employee where business_id = :business_id";
+    $saveQ = "select employee_id, firstname, lastname from employee join user on employee_id = rcdID where business_id = :business_id";
     $query = $conn->prepare($saveQ);
     $query->bindParam(':business_id', $BXID);
     $query->execute();
