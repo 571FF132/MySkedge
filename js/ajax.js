@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".business-select").change(function() {
+  $("#business-select").change(function() {
     var business_id = $(this).val();
     if(business_id != "") {
       $.ajax({
@@ -8,11 +8,11 @@ $(document).ready(function() {
         type:'POST',
         success:function(response) {
           var resp = $.trim(response);
-          $(".employee-select").html(resp);
+          $("#employee-select").html(resp);
         }
       });
     } else {
-      $(".employee-select").html("<option value=''>------- Select --------</option>");
+      $("#employee-select").html("<option value=''>------- Select --------</option>");
     }
   });
 });

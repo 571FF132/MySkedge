@@ -51,7 +51,7 @@ $businesses = $dao->getBusinesses();
         <form action="appointment-handler2.php" class="appointment-form" method="POST">
                 <div class="form-area">
                         Business:
-                        <select name="business-select">
+                        <select name="business-select" id="business-select">
                                 <option value="0">Select a business</option>
 				<?php 
 				foreach ($businesses as $business) {
@@ -62,7 +62,7 @@ $businesses = $dao->getBusinesses();
                 </div>
                 <div class="form-area">
                         Employee:
-                        <select name="employee-select">
+                        <select name="employee-select" id="employee-select">
                                 <option value="0">No preference</option>
                         </select>
                 </div>
