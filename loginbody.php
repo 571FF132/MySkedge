@@ -18,5 +18,5 @@
 </div>
 
 <div id="Sign Up Link">
-  <h1>New User?</h1>  <a href="signup.php">SignUp</a>
+  <h1>New User?</h1> <h2><a href="signup.php">SignUp</a></h2>
 </div>
