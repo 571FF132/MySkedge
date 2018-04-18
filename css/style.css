@@ -52,6 +52,10 @@ h1, h2 {
   padding-right: 2px;
 }
 
+#navigation-links a:link, a:visited {
+  color: #00ff80;
+}
+
 .carousel-wrapper {
   width: 90%;
   max-width: 1200px;
