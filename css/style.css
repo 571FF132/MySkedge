@@ -135,6 +135,24 @@ have a fixed width and height (but it's not required).
  
 }
 
+.about a:link {
+  color: blue;
+  text-shadow:
+    -1px -1px 0 #FFF,
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    1px 1px 0 #FFF;
+}
+
+.about a:visited {
+  color: blue;
+    text-shadow:
+    -1px -1px 0 #FFF,
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    1px 1px 0 #FFF;
+}
+
 form {
  width:100%;
  margin:auto:
