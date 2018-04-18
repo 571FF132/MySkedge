@@ -52,8 +52,20 @@ h1, h2 {
   padding-right: 2px;
 }
 
-#navigation-links a:link, a:visited {
+#navigation-links a:link {
   color: #00ff80;
+}
+
+#navigation-links a:visited {
+  color: #00ff80;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: blue;
 }
 
 .carousel-wrapper {
