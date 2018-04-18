@@ -11,9 +11,6 @@
       <img class="main-carousel" src="/images/calendar.png">
     </li>
     <li>
-      <img class="main-carousel" src="/images/business-meeting.jpg">
-    </li>
-    <li>
       <img class="main-carousel" src="/images/coffee-meeting.jpg">
     </li>
   </ul>
